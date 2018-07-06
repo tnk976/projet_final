@@ -16,9 +16,15 @@ cuisinierController.list = function(req, res) {
 };
 
 // Enregistrer un cuisinier
+cuisinierController.create = function (req, res) {
+    res.render("../views/cuisinier/connexion");
+  };
 
+  
 cuisinierController.save = function (req, res) {
-  if (req.body.username &&
+  if (req.body.nom &&
+    req.body.prenom &&
+    req.body.email &&
     req.body.password &&
     req.body.passwordConfirmation) {
 
