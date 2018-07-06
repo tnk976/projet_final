@@ -6,9 +6,25 @@ body {
 
 a {
   color: #00B7FF;
-}
+};
 
 /* title h1, h2, h3 etc{
   
   font-family: Roboto
 } */
+
+.color-green {
+  color: #00B27D;
+};
+
+.color-orange {
+  color: #E83B0C
+};
+
+.bg-green {
+  background-color: #00B27D
+};
+
+.bg-orange {
+  background-color: #E83B0C
+};
