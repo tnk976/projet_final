@@ -15,6 +15,3 @@ router.post("/save", cuisinier.save);
 module.exports = router;
 
 
-//export du module router
-module.exports = router;
-
