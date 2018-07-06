@@ -1,8 +1,14 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Verdana", Helvetica, Arial, sans-serif;
+  /* color: #00B27D  #E83B0C */
 }
 
 a {
   color: #00B7FF;
 }
+
+/* title h1, h2, h3 etc{
+  
+  font-family: Roboto
+} */
