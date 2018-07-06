@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var particulierRouter = require('./routes/particuliers');
+
 var app = express();
 var mongoose = require('mongoose');
 var session = require('express-session');
@@ -42,6 +42,7 @@ app.use(session({
 }));
 
 //routes particuliers
+var particulierRouter = require('./routes/particuliers');
 app.use('/particuliers', particulierRouter);
 
 

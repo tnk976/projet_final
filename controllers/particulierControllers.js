@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var bcrypt = require('bcrypt');
 var particulierController = {};
 var Particulier = require ("../models/particulier");
 
@@ -14,7 +14,7 @@ particulierController.list = function(req, res) {
     });
   };
   
-  // Créer un login
+  // Créer formulaire inscription
   particulierController.create = function(req, res){
     res.render("../views/particulier/inscription");
   }; 
@@ -38,6 +38,47 @@ particulierController.list = function(req, res) {
       });
     };
   }
+// connection
+  particulierController.auth = function (req, res) {
+    var Email = req.body.Email;
+    var password = req.body.password;
+  
+    Particulier.findOne({ email: Email }).exec(function (err, user) {
+      if (!err && user) {
+        bcrypt.compare(password, user.password, function (err, result) {
+          console.log(result);
+          if (result === true) {
+            req.session.userId = user._id;
+            req.session.Email = user.email;
+            req.session.success = 'Connexion Reussie';
+            res.redirect('/particuliers/liste');
+          }else {
+          //console.log(req.session.userName);
+          res.redirect('/particuliers/liste');
+          };
+        })
+    } else {
+        console.log("error =>", err);
+        return res.redirect('/particuliers');
+      }
+    })
+  };
+
+  // déconnection
+  particulierController.logout = function(req, res){
+  
+    if (req.session){
+        // supprimer la session
+        console.log(req.session);
+        req.session.destroy(function(err){
+            if(!err){
+                res.redirect('/particuliers')
+            }else {
+                console.log("error => ", err);
+            }
+        })
+    }
+  };
 
 //export du module
 module.exports = particulierController;

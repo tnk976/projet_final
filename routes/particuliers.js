@@ -20,6 +20,13 @@ router.get("/liste", particulier.list);
 //creer un login
 router.post("/save", particulier.save);
 
+router.post('/auth', particulier.auth);
+
+
+router.get('/logout', particulier.logout);
+
+
+
 //export du module router
 module.exports = router;
 
