@@ -1,37 +1,39 @@
 var mongoose = require('mongoose');
 
 var particulierController = {};
-var particulier = require ("../models/particulier"); 
+var Particulier = require ("../models/particulier");
 
 particulierController.list = function(req, res) {
-    User.find({}).exec(function(err, user){
+    Particulier.find({}).exec(function(err, particulier){
         if(err){
             console.log('Error : ', err);
         }else{
             //console.log("->",produit);
-            res.render("../views/users/index",{user:user} );
+            res.render("../views/particulier/liste",{particulier:particulier} );
         } 
     });
   };
   
   // Créer un login
   particulierController.create = function(req, res){
-    res.render("../views/users/profile");
+    res.render("../views/particulier/inscription");
   }; 
   
   particulierController.save = function (req, res) {
-    if (req.body.username &&
+      console.log(req.body.nom)
+      console.log(req.body.password)
+    if (req.body.nom &&
       req.body.password &&
       req.body.passwordConfirmation) {
   
-      var user = new User(req.body);
-      user.save(function (err) {
+      var particuliers = new Particulier(req.body);
+      particuliers.save(function (err) {
         if (err) {
           console.log(err);
-          res.render("../views/users/profile");
+          res.render("../views/particulier/inscription");
         } else {
           console.log("login OK");
-          res.redirect("/profiles");
+          res.redirect("../views/particulier/inscription");
         }
       });
     };

@@ -12,10 +12,10 @@ var particulier = require("../controllers/particulierControllers");
 //   });
 
 //recuperer la liste des users
-router.get("/", particulier.list);
+router.get("/", particulier.create);
 
 //creer un login
-router.get("/ajoutuser", particulier.create);
+router.get("/liste", particulier.list);
 
 //creer un login
 router.post("/save", particulier.save);
