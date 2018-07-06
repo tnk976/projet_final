@@ -8,15 +8,20 @@
 <body>
     <header>
         <% include ../partials/nav %>
+        <h1>Session de : <%= sessions._id%></h1>
+                    
+         
     </header>
 
     <main>
 
-        <div class="container-fluid">
-            <div class="row text-center justify-content-center">
-                <div class="col-lg-8">
-                        <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/ajoutuser">Se connecter</a>
-                    <table class="table table-bordered table-striped mt-5">
+        <div class="container ">
+            <div class="row">
+                <div class="m-4 text-center">
+                        <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/ajoutuser">S'inscrire</a>
+                        <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/login">Se connecter</a>
+
+                    <table class="col-lg-8 table table-bordered table-striped mt-5">
                         <thead>
                             <tr>
                                 <th scope="col">Nom</th>

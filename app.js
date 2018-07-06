@@ -3,13 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var particulierRouter = require('./routes/particuliers');
-
 var app = express();
 var mongoose = require('mongoose');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var db = mongoose.connection;
 
 var url = "mongodb://localhost/formationCuisine";
 mongoose.Promise = global.Promise;
@@ -29,6 +30,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
 
 //routes particuliers
 app.use('/particuliers', particulierRouter);
