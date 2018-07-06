@@ -17,7 +17,7 @@ cuisinierController.list = function(req, res) {
 
 // Enregistrer un cuisinier
 cuisinierController.create = function (req, res) {
-    res.render("../views/cuisinier/connexion");
+    res.render("../views/cuisinier/inscription");
   };
 
   
@@ -32,7 +32,7 @@ cuisinierController.save = function (req, res) {
     user.save(function (err) {
       if (err) {
         console.log(err);
-        res.render("../views/cuisinier/connexion");
+        res.render("../views/cuisinier/inscription");
       } else {
         console.log("login OK");
         res.redirect("/cuisiniers");
