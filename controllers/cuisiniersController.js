@@ -61,7 +61,6 @@ cuisinierController.auth = function (req, res) {
           req.session.success = 'Connexion Reussie';
           res.redirect('/cuisiniers');
         }else {
-        //console.log(req.session.userName);
         res.redirect('/cuisiniers/login');
         };
       })
@@ -70,6 +69,21 @@ cuisinierController.auth = function (req, res) {
       return res.redirect('/cuisiniers/login');
     }
   })
+};
+
+// fonction pour se déconnecter
+cuisinierController.logout = function(req, res){
+  if (req.session){
+      // supprimer la session
+      console.log(req.session);
+      req.session.destroy(function(err){
+          if(!err){
+              res.redirect('/')
+          }else {
+              console.log("error => ", err);
+          }
+      })
+  }
 };
 
 //export du module
