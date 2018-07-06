@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <header>
+        <% include ../partials/nav %>
+    </header>
+
+    <main>
+
+        <div class="container ">
+            <div class="row">
+
+                <div class="m-4 text-center">
+                    <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/ajoutuser">S'inscrire</a>
+                    <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/login">Se connecter</a>
+                    <div>
+                        <a href="/cuisiniers/logout">Se déconnecter</a>
+                    </div>
+
+                    <table class="col-lg-8 table table-bordered table-striped mt-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">Titre</th>
+                                <th scope="col">Contenu</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Horaire de début</th>
+                                <th scope="col">Durée</th>
+                                <th scope="col">Places disponibles</th>
+                                <th scope="col">Places réservées</th>
+                                <th scope="col">Prix</th>
+                                <th scope="col">Image</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% atelier.forEach(function(element) {%>
+                                <tr>
+                                    <td>
+                                        <%= element.titre%>
+                                    </td>
+                                    <td>
+                                        <%= element.contenu%>
+                                    </td>
+                                    <td>
+                                        <%= element.date%>
+                                    </td>
+                                    <td>
+                                        <%= element.horaire_debut%>
+                                    </td>
+                                    <td>
+                                        <%= element.duree%>
+                                    </td>
+                                    <td>
+                                        <%= element.places_dispo%>
+                                    </td>
+                                    <td>
+                                        <%= element.places_reservees%>
+                                    </td>
+                                    <td>
+                                        <%= element.prix%>
+                                    </td>
+                                    <td>
+                                        <%= element.image%>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
