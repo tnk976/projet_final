@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var particulierRouter = require('./routes/particuliers');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -28,6 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//routes particuliers
+app.use('/particuliers', particulierRouter);
 
 
 //routes cuisiniers
