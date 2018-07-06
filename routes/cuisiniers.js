@@ -6,7 +6,7 @@ var cuisinier = require("../controllers/cuisiniersController");
 router.get("/", cuisinier.list);
 
 //creer un login
-router.get("/ajoutuser", cuisinier.create);
+// router.get("/ajoutuser", cuisinier.create);
 
 //creer un login
 router.post("/save", cuisinier.save);
@@ -14,7 +14,4 @@ router.post("/save", cuisinier.save);
 //export du module router
 module.exports = router;
 
-
-//export du module router
-module.exports = router;
 

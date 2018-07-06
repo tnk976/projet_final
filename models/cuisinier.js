@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 
 var CuisinierSchema = new mongoose.Schema({
     nom: { type: String, required: true },

@@ -1,23 +1,21 @@
 var mongoose = require('mongoose');
-var cuisinierController = {};
 var Cuisinier = require ("../models/cuisinier"); 
+var bcrypt = require('bcrypt');
 
+var cuisinierController = {};
 
+// Liste des cuisiniers inscrits
 cuisinierController.list = function(req, res) {
-    Cuisinier.find({}).exec(function(err, user){
+    Cuisinier.find({}).exec(function(err, cuisinier){
       if(err){
           console.log('Error : ', err);
       }else{
-          //console.log("->",produit);
-          res.render("../views/cuisinier/index",{user:user} );
+          res.render("../views/cuisinier/liste",{cuisinier:cuisinier} );
       } 
   });
 };
 
-// Créer un login
-cuisinierController.create = function(req, res){
-  res.render("../views/cuisinier/index");
-}; 
+// Enregistrer un cuisinier
 
 cuisinierController.save = function (req, res) {
   if (req.body.username &&
@@ -28,7 +26,7 @@ cuisinierController.save = function (req, res) {
     user.save(function (err) {
       if (err) {
         console.log(err);
-        res.render("../views/cuisinier/index");
+        res.render("../views/cuisinier/connexion");
       } else {
         console.log("login OK");
         res.redirect("/cuisiniers");
