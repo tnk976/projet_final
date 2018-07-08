@@ -45,10 +45,14 @@ app.use(session({
 var particulierRouter = require('./routes/particuliers');
 app.use('/particuliers', particulierRouter);
 
-
 //routes cuisiniers
 var cuisiniers = require("./routes/cuisiniers");
 app.use("/cuisiniers", cuisiniers);
+
+//routes ateliers
+var ateliers = require("./routes/ateliers");
+app.use("/ateliers", ateliers);
+
 
 
 // catch 404 and forward to error handler
