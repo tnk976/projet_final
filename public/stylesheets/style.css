@@ -1,12 +1,21 @@
 body {
   padding: 50px;
   font: 18px "Verdana", Helvetica, Arial, sans-serif;
-  /* color: #00B27D  #E83B0C */
-  background: url('/images/accueil.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 -o-background-size: cover;
+}
+
+.accueil{
+
+  background: url('/images/accueil.jpg') no-repeat center center fixed;
+  padding: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+-o-background-size: cover;
+
 }
 
 /* a {
@@ -288,6 +297,17 @@ header.masthead p {
 
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem #E83B0C !important;
+}
+
+
+/* BOUTON BACK TO TOP */
+
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display:none;
 }
 
 
