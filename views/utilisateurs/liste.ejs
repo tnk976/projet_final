@@ -16,10 +16,10 @@
             <div class="row">
                
                 <div class="m-4 text-center">
-                        <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/ajoutuser">S'inscrire</a>
-                        <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/login">Se connecter</a>
+                        <a class="btn btn-primary mx-auto my-5" href="/utilisateurs/ajoutuser">S'inscrire</a>
+                        <a class="btn btn-primary mx-auto my-5" href="/utilisateurs/login">Se connecter</a>
                     <div>
-                         <a href="/cuisiniers/logout">Se déconnecter</a>
+                         <a href="/utilisateurs/logout">Se déconnecter</a>
                     </div>
 
                     <table class="col-lg-8 table table-bordered table-striped mt-5">
@@ -34,7 +34,7 @@
                         </thead>
                         <tbody>
 
-                            <% cuisinier.forEach(function(element) {%>
+                            <% utilisateur.forEach(function(element) {%>
                                 <tr>
                                     <td>
                                         <%= element.nom%>
