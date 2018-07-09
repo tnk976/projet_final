@@ -15,11 +15,15 @@ function requireLogin (req, res, next) {
 //recuperer la liste des utilisateurs
 router.get("/", atelier.list);
 
+//recuperer la liste des utilisateurs
+router.get("/atelierliste", atelier.atelierlist);
+
 //accéder à la page d'inscription
 router.get("/ajoutatelier", requireLogin, atelier.create);
 
 //Créer un utilisateur / cuisinier
 router.post("/save", requireLogin, atelier.save);
+
 
 
 //export du module router

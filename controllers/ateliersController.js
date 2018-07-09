@@ -15,6 +15,19 @@ atelierController.list = function(req, res) {
     });
   };
 
+
+// Lister les ateliers
+atelierController.atelierlist = function(req, res) {
+    Atelier.find({}).exec(function(err, atelier){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/ateliers/atelierliste",{atelier:atelier} );
+        } 
+    });
+  };
+
+
 // Renvoit à la page d'ajout d'un atelier
 atelierController.create = function (req, res) {
     res.render("../views/ateliers/ajouter");

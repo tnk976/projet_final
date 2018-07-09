@@ -22,6 +22,18 @@ usersController.list = function (req, res) {
     });
 };
 
+// Liste des utilisateurs inscrits
+usersController.listeutilisateur = function (req, res) {
+    Utilisateur.find({}).exec(function (err, utilisateur) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+            console.log(utilisateur)
+            res.render("../views/utilisateurs/listeutilisateur", { utilisateur: utilisateur });
+        }
+    });
+};
+
 // Renvoit à la page d'inscription
 usersController.create = function (req, res) {
     res.render("../views/utilisateurs/inscription");
