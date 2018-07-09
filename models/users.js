@@ -5,8 +5,9 @@ var UserSchema = new mongoose.Schema({
     nom: { type: String, required: true },
     prenom: { type: String, required: true },
     email: { type: String, required: true, index: { unique: true } },
+    type: String,
     specialite: String,
-    telephone: Number,
+    telephone: String,
     password: { type: String, required: true },
     passwordConfirmation: { type: String, required: true }
 });

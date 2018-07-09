@@ -9,15 +9,17 @@
 
         <% include ../partials/nav %>
 
+    
+
 
     <header class="text-center">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Accueil Cuisiniers </strong>
+              <strong>Accueil Cuisiniers <%= user %></strong>
             </h1>
-            <div><a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Les Ateliers</a></div>
+            <div><a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a></div>
             <div><a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers/ajoutatelier">Ajouter un atelier</a></div>
 
           </div>
