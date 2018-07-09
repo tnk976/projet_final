@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <% include ../partials/head %>
-    </head>
+<head>
+  <% include ../partials/head %>
+</head>
 
 <body>
 
-        <% include ../partials/nav %>
+  <% include ../partials/nav %>
 
-    
+
 
 
     <header class="text-center">
@@ -17,34 +17,25 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Accueil Cuisiniers <%= user %></strong>
+              <strong>Bienvenue Chef
+                <%= user.prenom %>
+              </strong>
             </h1>
-            <div><a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a></div>
-            <div><a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers/ajoutatelier">Ajouter un atelier</a></div>
-
           </div>
-
         </div>
       </div>
-
     </header>
 
-    <main class="text-center text-white d-flex">
-
-
+    <main class="text-center">
       <div class="container my-auto">
-
         <div class="row">
-          <div class="col-lg-10 mx-auto">
+          <div class="col-lg-10 mt-5">
 
-            <h1 class="text-uppercase prop">
-              <strong>A PROPOS DE NOUS</strong>
-            </h1>
-
-           <strong> <p class="text-faded mb-5 mt-5">Nous sommes un centre de formation de cuisine qui propose des ateliers à nos élèves à partir de 12 ans, mais
-              aussi à des particuliers.</p>
-            <p class="text-faded mt-5">Vous avez entre 25 - 35 ans et vous voulez apprendre à cuisiner afin de manger correctement ? 
-              <br /> N'hésitez plus, rejoigner-nous !</p> </strong>
+              <ul class="list-group">
+                  <li class="list-group-item"><a href="/ateliers">Liste des Ateliers</a></li>
+                  <li class="list-group-item"><a href="/ateliers/ajoutatelier">Ajouter un atelier</a></li>
+                  <li class="list-group-item"><a href="/utilisateurs/liste">Liste des utilisateurs</a></li>
+                </ul>
 
           </div>
         </div>
@@ -66,6 +57,6 @@
 
 
 
-  </body>
+</body>
 
 </html>

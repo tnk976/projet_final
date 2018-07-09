@@ -13,55 +13,51 @@
     <main>
 
         <div class="container ">
-            <div class="row">
-               
-                <div class="m-4 text-center">
-                        <a class="btn btn-primary mx-auto my-5" href="/utilisateurs/ajoutuser">S'inscrire</a>
-                        <a class="btn btn-primary mx-auto my-5" href="/utilisateurs/login">Se connecter</a>
-                    <div>
-                         <a href="/utilisateurs/logout">Se déconnecter</a>
-                    </div>
+            <div class="row justify-content-center">
+                    <div class="m-4 text-center">
+                            <h4 class="rounded-circle mx-auto my-5">Utilisateurs</h4>
+                        </div>
 
-                    <table class="col-lg-8 table table-bordered table-striped mt-5">
-                        <thead>
+                <table class="col-lg-8 table table-bordered table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Spécialité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% utilisateur.forEach(function(element) {%>
                             <tr>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Prénom</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Spécialité</th>
-                                <th scope="col">Mot de passe</th>
+                                <td>
+                                    <%= element.nom%>
+                                </td>
+                                <td>
+                                    <%= element.prenom%>
+                                </td>
+                                <td>
+                                    <%= element.email%>
+                                </td>
+                                <td>
+                                    <%= element.type%>
+                                </td>
+                                <td>
+                                    <%= element.specialite%>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-
-                            <% utilisateur.forEach(function(element) {%>
-                                <tr>
-                                    <td>
-                                        <%= element.nom%>
-                                    </td>
-                                    <td>
-                                        <%= element.prenom%>
-                                    </td>
-                                    <td>
-                                        <%= element.email%>
-                                    </td>
-                                    <td>
-                                        <%= element.specialite%>
-                                    </td>
-                                    <td>
-                                        <%= element.password%>
-                                    </td>
-                                </tr>
-                                <%})%>
-                        </tbody>
-                    </table>
-                </div>
+                            <%})%>
+                    </tbody>
+                </table>
             </div>
         </div>
+
     </main>
 
 
-
+    <% include ../partials/footer %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
