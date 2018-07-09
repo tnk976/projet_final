@@ -1,4 +1,4 @@
-body {
+nav {
   padding: 50px;
   font: 18px "Verdana", Helvetica, Arial, sans-serif;
   -webkit-background-size: cover;
@@ -18,6 +18,19 @@ body {
 
 }
 
+.nav-views {
+  background: url('/images/accueil.jpg') center center ;
+  padding: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+-o-background-size: cover;
+
+}
+.h-250 {
+  height: 250px;
+}
+
 /* a {
   color: #;
 }; */
@@ -28,14 +41,12 @@ body {
 } */
 
 .color-orange {
-  color: #E83B0C
-};
+  color: #E83B0C;
+}
 
 .bg-orange {
-  background-color: #E83B0C
-};
-
-
+  background-color: #E83B0C;
+}
 
 
 

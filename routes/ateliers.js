@@ -8,7 +8,7 @@ function requireLogin (req, res, next) {
     }else {
         var err = new Error('error 404');
         err.status = 401;
-        res.redirect('/cuisiniers/login');
+        res.redirect('/utilisateurs/login');
     }
 };
 
