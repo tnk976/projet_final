@@ -41,13 +41,9 @@ app.use(session({
   })
 }));
 
-//routes particuliers
-var particulierRouter = require('./routes/particuliers');
-app.use('/particuliers', particulierRouter);
-
-//routes cuisiniers
-var cuisiniers = require("./routes/cuisiniers");
-app.use("/cuisiniers", cuisiniers);
+//routes utilisateurs
+var utilisateurs = require("./routes/users");
+app.use("/utilisateurs", utilisateurs);
 
 //routes ateliers
 var ateliers = require("./routes/ateliers");
