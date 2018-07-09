@@ -79,6 +79,33 @@
                                     <th scope="col">Image</th>
 
 
+                                    <td>
+                                        <%= element.titre%>
+                                    </td>
+                                    <td>
+                                        <%= element.contenu%>
+                                    </td>
+                                    <td>
+                                        <%= (new Date(element.date)).getDate() %>/<%= (new Date(element.date)).getMonth()+1 %>/<%= new Date(element.date).getFullYear() %>
+                                    </td>
+                                    <td>
+                                         <%= element.horaire_debut %>  
+                                    </td>
+                                    <td>
+                                        <%= element.duree%>
+                                    </td>
+                                    <td>
+                                        <%= element.places_dispo%>
+                                    </td>
+                                    <td>
+                                        <%= element.places_reservees%>
+                                    </td>
+                                    <td>
+                                        <%= element.prix%>
+                                    </td>
+                                    <td>
+                                        <%= element.image%>
+                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
