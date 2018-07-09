@@ -55,9 +55,9 @@ usersController.save = function (req, res) {
                 res.render("../views/utilisateurs/inscription");
             } else if (req.body.type == "Cuisinier") {
                 console.log("login OK");
-                res.render("../views/cuisinier/index");
+                res.render("../views/cuisinier/index", { user: user });
             } else {
-                res.redirect("/");
+                res.render("../views/utilisateurs/index", { user: user });
             }
         });
     };
@@ -80,11 +80,14 @@ usersController.auth = function (req, res) {
                 console.log(result);
                 if (result === true) {
                     req.session.userId = user._id;
+                    req.session.type = user.type;
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
-                    // var result = '<p>Nom : <p>' + user.nom + ' ' + user.prenom + '<p>Mail: </p>' + user.email + '<br><a type="button" href="/utilisateurs/logout">Logout</a>'                    
-                    res.render("../views/utilisateurs/index", {user: user});
-                    // res.redirect('/utilisateurs');
+                    // var result = '<p>Nom : <p>' + user.nom + ' ' + user.prenom + '<p>Mail: </p>' + user.email + '<br><a type="button" href="/utilisateurs/logout">Logout</a>'   
+                    if (req.session.type === "Particulier") {
+                        res.render("../views/utilisateurs/index", { user: user });
+                    }
+                    else { res.render("../views/cuisinier/index", { user: user }); }
 
                 } else {
                     //console.log(req.session.userName);
