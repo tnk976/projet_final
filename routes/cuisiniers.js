@@ -2,8 +2,21 @@ var express = require('express');
 var router = express.Router();
 var cuisinier = require("../controllers/cuisiniersController");
 
+function requireLogin (req, res, next) {
+    if (req.session && req.session.userId) {
+        next();
+    }else {
+        var err = new Error('error 404');
+        err.status = 401;
+        res.redirect('/cuisiniers/ajoutuser');
+    }
+};
+
+// page d'accueil pour les cuisiniers une fois connectés
+router.get("/", cuisinier.index);
+
 //recuperer la liste des utilisateurs
-router.get("/", cuisinier.list);
+router.get("/liste", requireLogin, cuisinier.list);
 
 //accéder à la page d'inscription
 router.get("/ajoutuser", cuisinier.create);
