@@ -3,9 +3,43 @@
 
 <head>
     <% include ../partials/head %>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <link href="/stylesheets/liste.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container">
+            <img class="navbar-brand js-scroll-trigger" href="#page-top" src="/images/logo.png" width="90" height="100" alt="Logo du site">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/particuliers">Particulier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="/cuisiniers/login">Cuisinier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <% include ../partials/nav %>
     </header>
@@ -20,63 +54,140 @@
                     <a class="btn btn-primary mx-auto my-5" href="/cuisiniers/login">Se connecter</a>
                     <div>
                         <a href="/cuisiniers/logout">Se déconnecter</a>
+
+                        <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
                     </div>
 
-                    <table class="col-lg-8 table table-bordered table-striped mt-5">
-                        <thead>
-                            <tr>
-                                <th scope="col">Titre</th>
-                                <th scope="col">Contenu</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Horaire de début</th>
-                                <th scope="col">Durée</th>
-                                <th scope="col">Places disponibles</th>
-                                <th scope="col">Places réservées</th>
-                                <th scope="col">Prix</th>
-                                <th scope="col">Image</th>
+
+                  
 
 
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <!--Tableau des différents ateliers-->
 
-                            <% atelier.forEach(function(element) {%>
+                    <div class="table-responsive">
+                        <table class="col-lg-8 table table-bordered table-striped mt-5">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <%= element.titre%>
-                                    </td>
-                                    <td>
-                                        <%= element.contenu%>
-                                    </td>
-                                    <td>
-                                        <%= element.date%>
-                                    </td>
-                                    <td>
-                                        <%= element.horaire_debut%>
-                                    </td>
-                                    <td>
-                                        <%= element.duree%>
-                                    </td>
-                                    <td>
-                                        <%= element.places_dispo%>
-                                    </td>
-                                    <td>
-                                        <%= element.places_reservees%>
-                                    </td>
-                                    <td>
-                                        <%= element.prix%>
-                                    </td>
-                                    <td>
-                                        <%= element.image%>
-                                    </td>
+                                    <th scope="col">Titre</th>
+                                    <th scope="col">Contenu</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Horaire de début</th>
+                                    <th scope="col">Durée</th>
+                                    <th scope="col">Places disponibles</th>
+                                    <th scope="col">Places réservées</th>
+                                    <th scope="col">Prix</th>
+                                    <th scope="col">Image</th>
+
+
                                 </tr>
-                                <%})%>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+
+                                <% atelier.forEach(function(element) {%>
+                                    <tr>
+                                        <td>
+                                            <%= element.titre%>
+                                        </td>
+                                        <td>
+                                            <%= element.contenu%>
+                                        </td>
+                                        <td>
+                                            <%= element.date%>
+                                        </td>
+                                        <td>
+                                            <%= element.horaire_debut%>
+                                        </td>
+                                        <td>
+                                            <%= element.duree%>
+                                        </td>
+                                        <td>
+                                            <%= element.places_dispo%>
+                                        </td>
+                                        <td>
+                                            <%= element.places_reservees%>
+                                        </td>
+                                        <td>
+                                            <%= element.prix%>
+                                        </td>
+                                        <td>
+                                            <%= element.image%>
+                                        </td>
+                                    </tr>
+                                    <%})%>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <table class="col-lg-8 table table-bordered table-striped mt-5">
+
                 </div>
             </div>
         </div>
     </main>
+
+    <footer class="footer-distributed bg-light" id="contact">
+
+        <div class="footer-left">
+
+            <h3>Company
+                <span>logo</span>
+            </h3>
+
+
+            <p class="footer-company-name">Company Name &copy; 2018</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>21 Revolution Street</span> Paris, France</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p>
+                    <a href="mailto:support@company.com">support@company.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
 
 
 
