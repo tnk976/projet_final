@@ -4,6 +4,12 @@ var bcrypt = require('bcrypt');
 
 var cuisinierController = {};
 
+// Renvoit à la page d'accueil cuisiniers
+cuisinierController.index = function (req, res) {
+  res.render("../views/cuisinier/index");
+};
+
+
 // Liste des cuisiniers inscrits
 cuisinierController.list = function(req, res) {
     Cuisinier.find({}).exec(function(err, cuisinier){
@@ -59,7 +65,9 @@ cuisinierController.auth = function (req, res) {
           req.session.userId = user._id;
           req.session.Email = user.email;
           req.session.success = 'Connexion Reussie';
-          res.redirect('/cuisiniers');
+          res.send('<h1>Name: </h1>' + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/cuisiniers/logout">Logout</a>')
+          res.render("../views/cuisinier/index");
+          // res.redirect('/cuisiniers');
         }else {
         res.redirect('/cuisiniers/login');
         };
@@ -69,7 +77,10 @@ cuisinierController.auth = function (req, res) {
       return res.redirect('/cuisiniers/login');
     }
   })
+
 };
+
+
 
 // fonction pour se déconnecter
 cuisinierController.logout = function(req, res){
