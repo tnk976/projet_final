@@ -2,7 +2,7 @@ body {
   padding: 50px;
   font: 18px "Verdana", Helvetica, Arial, sans-serif;
   /* color: #00B27D  #E83B0C */
-  background: url('/images/food.jpg') no-repeat center center fixed;
+  background: url('/images/accueil.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
