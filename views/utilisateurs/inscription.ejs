@@ -16,9 +16,9 @@
         <div class="container">
             <div class="row text-center justify-content-center">
 
-                <form class="col-lg-8 m-4" action="/utilisateurs/save" method="POST">
+                <form class="col-lg-10 m-4" action="/utilisateurs/save" method="POST">
                     <h1>S'inscrire</h1>
-                    <div class="row">
+                    <!-- <div class="row"> -->
                         <div class="col form-group">
                             <label for="username">Nom :</label>
                             <input placeholder="Dupont" type="text" class="form-control" name="nom">
@@ -27,32 +27,41 @@
                             <label for="username">Prénom :</label>
                             <input type="text" placeholder="Alfred" class="form-control" name="prenom">
                         </div>
-                    </div>
-                    <div class="row">
+                    <!-- </div> -->
+                    <!-- <div class="row"> -->
                         <div class="col form-group">
                             <label for="username">Email :</label>
                             <input type="email" placeholder="email@email.com" class="form-control" name="email">
                         </div>
                         <div class="col form-group">
                             <label for="username">téléphone :</label>
-                            <input type="number" class="form-control" name="telephone">
+                            <input type="text" placeholder="0262 22 22 22" class="form-control" name="telephone">
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="username">Specialité :</label>
-                        <input type="text" placeholder="Chef-cuisinier" class="form-control" name="specialite">
-                    </div>
-
-                    <div class="row">
+                    <!-- </div> -->
+                    <!-- <div class="row"> -->
                         <div class="col form-group">
-                            <label for="password">Password:</label>
+                            <label>Je suis :</label>
+                            <select class="form-control" name="type">
+                                <option>Particulier</option>
+                                <option>Cuisinier</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="username">Specialité (si cuisinier) :</label>
+                            <input type="text" placeholder="Chef-cuisinier" class="form-control" name="specialite">
+                        </div>
+                    <!-- </div> -->
+
+                    <!-- <div class="row"> -->
+                        <div class="col form-group">
+                            <label for="password">Choisir un mot de passe :</label>
                             <input type="password" placeholder="******" class="form-control" name="password">
                         </div>
                         <div class="col form-group">
-                            <label for="passwordConf">Confirm password:</label>
+                            <label for="passwordConf">Confirmer le mot de passe :</label>
                             <input type="password" placeholder="******" class="form-control" name="passwordConfirmation">
                         </div>
-                    </div>
+                    <!-- </div> -->
                     <button type="submit" class="btn btn-primary mt-4">Enregistrer</button>
 
                 </form>
