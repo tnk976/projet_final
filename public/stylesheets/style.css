@@ -18,16 +18,8 @@ body {
   font-family: Roboto
 } */
 
-.color-green {
-  color: #00B27D;
-};
-
 .color-orange {
   color: #E83B0C
-};
-
-.bg-green {
-  background-color: #00B27D
 };
 
 .bg-orange {
@@ -277,7 +269,7 @@ header.masthead p {
   text-transform: uppercase;
   border: none;
   border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Verdana', Arial, sans-serif;
 }
 
 .btn-xl {

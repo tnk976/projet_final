@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row text-center justify-content-center">
 
-                <form class="col-lg-8 m-4" action="/cuisiniers/save" method="POST">
+                <form class="col-lg-8 m-4" action="/utilisateurs/save" method="POST">
                     <h1>S'inscrire</h1>
                     <div class="row">
                         <div class="col form-group">
@@ -34,10 +34,15 @@
                             <input type="email" placeholder="email@email.com" class="form-control" name="email">
                         </div>
                         <div class="col form-group">
-                            <label for="username">Specialité :</label>
-                            <input type="text" placeholder="Chef-cuisinier" class="form-control" name="specialite">
+                            <label for="username">téléphone :</label>
+                            <input type="number" class="form-control" name="telephone">
                         </div>
                     </div>
+                    <div class="row form-group">
+                        <label for="username">Specialité :</label>
+                        <input type="text" placeholder="Chef-cuisinier" class="form-control" name="specialite">
+                    </div>
+
                     <div class="row">
                         <div class="col form-group">
                             <label for="password">Password:</label>
@@ -52,8 +57,8 @@
 
                 </form>
 
-                <div class= "col-lg-8">
-                    <a href="/cuisiniers/login">Déjà inscrit</a>
+                <div class="col-lg-8">
+                    <a href="/utilisateurs/login">Déjà inscrit</a>
                 </div>
             </div>
 
