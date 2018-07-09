@@ -310,7 +310,12 @@ header.masthead p {
   display:none;
 }
 
+.cont{
 
+  color:#E83B0C;
+  margin-top: 450px;
+
+}
 
 /* /FOOTER */
 
@@ -323,7 +328,7 @@ header.masthead p {
   font: bold 16px sans-serif;
   background-color: #ffffff17;
   padding: 55px 50px;
-  margin-top: 300px;
+  margin-top: 70px;
 }
 
 .footer-distributed .footer-left,
