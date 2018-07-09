@@ -10,41 +10,34 @@
   <% include ../partials/nav %>
 
 
-
-
-    <header class="text-center">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>Bienvenue Chef
-                <%= user.prenom %>
-              </strong>
-            </h1>
-          </div>
-        </div>
-      </div>
+    <header class="mt-5 text-center">
+      <h1 class="text-uppercase">
+        <strong>Bienvenue Chef
+          <%= user.prenom %>
+        </strong>
+      </h1>
     </header>
 
-    <main class="text-center">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mt-5">
+    <main class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mt-5">
 
-              <ul class="list-group">
-                  <li class="list-group-item"><a href="/ateliers">Liste des Ateliers</a></li>
-                  <li class="list-group-item"><a href="/ateliers/ajoutatelier">Ajouter un atelier</a></li>
-                  <li class="list-group-item"><a href="/utilisateurs/liste">Liste des utilisateurs</a></li>
-                </ul>
-
-          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a href="/ateliers">Liste des Ateliers</a>
+            </li>
+            <li class="list-group-item">
+              <a href="/ateliers/ajoutatelier">Ajouter un atelier</a>
+            </li>
+            <li class="list-group-item">
+              <a href="/utilisateurs/liste">Liste des utilisateurs</a>
+            </li>
+          </ul>
         </div>
       </div>
-
-
-
-
     </main>
+
+    <% include ../partials/footer %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

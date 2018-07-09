@@ -2,18 +2,7 @@
 <html lang="fr">
 
 <head>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="stylesheets/liste.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-
+    <% include ../partials/head %>
 </head>
 
 <body>
@@ -22,17 +11,11 @@
 
 
         <main>
-
             <div class="container ">
                 <div class="row justify-content-center">
-
                     <div class="m-4 text-center">
                         <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
                     </div>
-
-
-
-
 
                     <!--Tableau des différents ateliers-->
 
@@ -49,12 +32,9 @@
                                     <th scope="col">Places réservées</th>
                                     <th scope="col">Prix</th>
                                     <th scope="col">Image</th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <% atelier.forEach(function(element) {%>
                                     <tr>
                                         <td>
@@ -84,7 +64,7 @@
                                             <%= element.prix%>
                                         </td>
                                         <td>
-                                            <%= element.image%>
+                                            <img class="w-25" src="<%= element.image %>">
                                         </td>
                                     </tr>
                                     <%})%>
@@ -92,7 +72,6 @@
                         </table>
 
                     </div>
-
 
                     <table class="col-lg-8 table table-bordered table-striped mt-5">
 
