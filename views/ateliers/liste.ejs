@@ -49,10 +49,10 @@
                                         <%= element.contenu%>
                                     </td>
                                     <td>
-                                        <%= element.date%>
+                                        <%= (new Date(element.date)).getDate() %>/<%= (new Date(element.date)).getMonth()+1 %>/<%= new Date(element.date).getFullYear() %>
                                     </td>
                                     <td>
-                                        <%= element.horaire_debut%>
+                                         <%= element.horaire_debut %>  
                                     </td>
                                     <td>
                                         <%= element.duree%>
