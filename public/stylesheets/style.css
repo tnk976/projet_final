@@ -267,8 +267,7 @@ header.masthead p {
 
 .prop{
 
-  margin-top: 50px;
-  padding-top: 80px;
+  padding-top: 100px;
   color:#E83B0C;
 
 }
@@ -309,9 +308,9 @@ header.masthead p {
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
-
-	padding: 55px 50px;
+  font: bold 16px sans-serif;
+  background-color: #ffffff17;
+  padding: 55px 50px;
   margin-top: 300px;
 }
 
@@ -331,7 +330,7 @@ header.masthead p {
 /* The company logo */
 
 .footer-distributed h3{
-	color:  #ffffff;
+	color:  #000000;
 	font: normal 36px '', cursive;
 	margin: 0;
 }
@@ -356,7 +355,7 @@ header.masthead p {
 }
 
 .footer-distributed .footer-company-name{
-	color:  #000000;
+	color:  #ffffff;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -414,7 +413,7 @@ header.masthead p {
 
 .footer-distributed .footer-company-about{
 	line-height: 20px;
-	color:  #92999f;
+	color:  #ffffff;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
@@ -422,7 +421,7 @@ header.masthead p {
 
 .footer-distributed .footer-company-about span{
 	display: block;
-	color:  #ffffff;
+	color:  rgb(255, 255, 255);
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -437,11 +436,11 @@ header.masthead p {
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
+	background-color:  #ffffff;
 	border-radius: 2px;
 
 	font-size: 20px;
-	color: #ffffff;
+	color: #E83B0C;
 	text-align: center;
 	line-height: 35px;
 

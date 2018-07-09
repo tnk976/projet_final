@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <% include ../partials/head %>
@@ -59,7 +59,7 @@
                     </div>
 
 
-                  
+
 
 
                     <!--Tableau des différents ateliers-->
@@ -86,10 +86,12 @@
                                         <%= element.contenu%>
                                     </td>
                                     <td>
-                                        <%= (new Date(element.date)).getDate() %>/<%= (new Date(element.date)).getMonth()+1 %>/<%= new Date(element.date).getFullYear() %>
+                                        <%= (new Date(element.date)).getDate() %>/
+                                            <%= (new Date(element.date)).getMonth()+1 %>/
+                                                <%= new Date(element.date).getFullYear() %>
                                     </td>
                                     <td>
-                                         <%= element.horaire_debut %>  
+                                        <%= element.horaire_debut %>
                                     </td>
                                     <td>
                                         <%= element.duree%>
