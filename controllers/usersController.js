@@ -68,6 +68,7 @@ usersController.auth = function (req, res) {
                 console.log(result);
                 if (result === true) {
                     req.session.userId = user._id;
+                    req.session.nom = user.nom;
                     req.session.type = user.type;
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
