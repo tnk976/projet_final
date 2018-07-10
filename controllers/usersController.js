@@ -79,13 +79,14 @@ usersController.auth = function (req, res) {
             bcrypt.compare(password, user.password, function (err, result) {
                 console.log(result);
                 if (result === true) {
+                    
                     req.session.userId = user._id;
                     req.session.type = user.type;
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
                     // var result = '<p>Nom : <p>' + user.nom + ' ' + user.prenom + '<p>Mail: </p>' + user.email + '<br><a type="button" href="/utilisateurs/logout">Logout</a>'   
                     if (req.session.type === "Particulier") {
-                        res.render("../views/utilisateurs/index", { user: user });
+                        res.render("../views/utilisateurs/index", { user: user, session:req.session.userId });
                     }
                     else { res.render("../views/cuisinier/index", { user: user }); }
 

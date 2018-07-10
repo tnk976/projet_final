@@ -5,7 +5,7 @@ var Reservation = require ("../models/reservation");
 
  // Créer formulaire inscription
  reservationController.create = function(req, res){
-    res.render("../views/reservation/reservation");
+    res.render("../views/reservation/reservation", {session:req.session.userId});
   }; 
   
   reservationController.save = function (req, res) {
