@@ -5,11 +5,10 @@ var Reservation = require ("../models/reservation");
 
  // Créer formulaire inscription
  reservationController.create = function(req, res){
-    res.render("../views/reservation/reservation", {session:req.session.userId});
+    res.render("../views/reservation/reservation", {session:req.session});
   }; 
   
   reservationController.save = function (req, res) {
-      console.log('=====>' + req.body)
       var reservations = new Reservation(req.body);
       reservations.save(function (err) {
         if (err) {
@@ -17,8 +16,22 @@ var Reservation = require ("../models/reservation");
           res.render("../views/reservation/reservation");
         } else {
           console.log("login OK");
-          res.redirect("../views/reservation/reservation");
+          res.redirect("/reservations");
         }
+      });
+    };
+
+    reservationController.list = function(req, res) {
+      Reservation.find({})
+      .populate("id_particulier")
+      .populate("id_atelier")
+      .exec(function(err, reservations){
+          if(err){
+              console.log('Error : ', err);
+          }else{
+            console.log("woooooooow=========="+ reservations)
+              res.render("../views/utilisateurs/listedescours",{reservation:reservations, session:req.session} );
+          } 
       });
     };
   

@@ -16,7 +16,7 @@ atelierController.list = function(req, res) {
   };
 
 
-// Lister les ateliers
+// Lister les ateliers vers atelierliste ejs
 atelierController.atelierlist = function(req, res) {
     Atelier.find({}).exec(function(err, atelier){
         if(err){

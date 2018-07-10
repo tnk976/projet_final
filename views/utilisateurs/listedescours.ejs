@@ -1,0 +1,77 @@
+
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <title>Title</title>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          </head>
+          <body>
+              
+      <div>
+            <table class="col-lg-8 table table-bordered table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Contenu</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Horaire de début</th>
+                        <th scope="col">Durée</th>
+                        <th scope="col">Places disponibles</th>
+                        <th scope="col">Places réservées</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% reservation.forEach(function(element) {%>
+                       if(<%=session.userId%> === <%=element.id_particulier[0]._id%>){
+                        <tr>
+                            <td>
+                                <%= element.id_atelier[0].titre%>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].contenu%>
+                            </td>
+                            <td>
+                                <%= (new Date(element.id_atelier[0].date)).getDate() %>/
+                                    <%= (new Date(element.id_atelier[0].date)).getMonth()+1 %>/
+                                        <%= new Date(element.id_atelier[0].date).getFullYear() %>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].horaire_debut %>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].duree%>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].places_dispo%>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].places_reservees%>
+                            </td>
+                            <td>
+                                <%= element.id_atelier[0].prix%>
+                            </td>
+                            <td>
+                                <img class="w-25" src="<%= element.id_atelier[0].image %>">
+                            </td>
+                        </tr>
+                            }
+                        <%})%>
+                </tbody>
+            </table>
+  
+        </div>
+  
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          </body>
+        </html>

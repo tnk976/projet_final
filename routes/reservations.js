@@ -9,6 +9,9 @@ router.get("/", reservation.create);
 //creer une reservation
 router.post("/save", reservation.save);
 
+//creer une liste
+router.get("/liste", reservation.list);
+
 
 //export du module router
 module.exports = router;

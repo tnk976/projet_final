@@ -4,15 +4,15 @@ var mongoose = require('mongoose');
 
 
 var AtelierSchema = new mongoose.Schema({
-    titre: String,
-    contenu: String,
-    date: Date,
-    horaire_debut: String,
-    duree: Number,
-    places_dispo: Number,
-    places_reservees: Number,
-    prix: Number,
-    image: String
+    titre: { type: String, required: true },
+    contenu: { type: String, required: true },
+    date: { type: Date, required: true },
+    horaire_debut: { type: String, required: true },
+    duree: { type: Number, required: true },
+    places_dispo: { type: Number, required: true },
+    places_reservees: { type: Number, required: true },
+    prix: { type: Number, required: true },
+    image: { type: String, required: true }
 });
 
 
