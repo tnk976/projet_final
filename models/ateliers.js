@@ -12,7 +12,8 @@ var AtelierSchema = new mongoose.Schema({
     places_dispo: { type: Number, required: true },
     places_reservees: { type: Number, required: true },
     prix: { type: Number, required: true },
-    image: { type: String, required: true }
+    image: { type: String, required: true },
+    active: Boolean
 });
 
 
