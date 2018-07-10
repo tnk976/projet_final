@@ -28,7 +28,7 @@
       font-size: 15px;
       text-align: center;
       color: rgba(255, 255, 255, 0.652);
-      background: rgba(0, 0, 0, 0.25);
+      background: black;
       position: fixed;
       right: 59px;
       opacity: 1;
@@ -44,7 +44,7 @@
     }
 
     a#cRetour:hover {
-      background: rgba(0, 0, 0, 1);
+      background: #E83B0C;
       transition: all ease-in 0.2s;
     }
 
@@ -148,7 +148,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         window.onscroll = function (ev) {
-          document.getElementById("cRetour").className = (window.pageYOffset > 500) ? "cVisible" : "cInvisible";
+          document.getElementById("cRetour").className = (window.pageYOffset > 800) ? "cVisible" : "cInvisible";
         };
       });
     </script>
@@ -196,17 +196,18 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col">
 
 
         <footer class="footer-distributed" id="contact">
 
           <div class="footer-left">
 
-            <h3>Formation<span>Cuisine</span></h3>
+            <h3>Formation
+              <span>Cuisine</span></h3>
 
 
-            <p class="footer-company-name">FormationCuisine &copy; 2018</p>
+            <p class="footer-company-name mt-3">Formation Cuisine &copy; 2018</p>
           </div>
 
           <div class="footer-center">

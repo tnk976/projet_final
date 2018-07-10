@@ -18,6 +18,14 @@
             <form class="pb-4 mx-auto " action="/ateliers/save" method="POST">
                 <div class="form-group">
                     <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Formateur :</label>
+                        <select class="col-sm-5" name="chef">
+                            <option>
+                                <%=session.nom%>
+                            </option>
+                        </select>
+                    </div>
+                    <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Titre:</label>
                         <input class="col-sm-5" type="text" name="titre" placeholder="titre de l'atelier" required/>
                     </div>
@@ -33,7 +41,7 @@
                     <div class="date my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Horaire de début:</label>
                         <input class="col-sm-5" type="text" name="horaire_debut" placeholder="11:00" required/>
-                        
+
                     </div>
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Durée (en minutes) :</label>
@@ -59,7 +67,8 @@
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Activer :</label>
                         <input class="col-sm-5" type="checkbox" name="active" />
                     </div>
-                    
+
+
                     <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
                 </div>
             </form>
