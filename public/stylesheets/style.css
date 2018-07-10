@@ -336,10 +336,11 @@ header.masthead p {
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-  font: bold 16px sans-serif;
+  font: bold 16px 'Verdana' , sans-serif;
   background-color: #ffffff17;
   padding: 55px 50px;
-  margin-top: 70px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .footer-distributed .footer-left,
