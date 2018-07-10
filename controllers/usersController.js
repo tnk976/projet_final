@@ -84,6 +84,7 @@ usersController.login = function (req, res) {
 };
 
 
+
 // fonction pour se connecter
 usersController.auth = function (req, res) {
     var email = req.body.Email;
@@ -101,7 +102,7 @@ usersController.auth = function (req, res) {
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
                     if (req.session.type === "Particulier") {
-                        res.render("../views/utilisateurs/index", { user: user, session: req.session.userId });
+                        res.render("../views/utilisateurs/index", { user: user, session: req.session.nom });
                     }
                     else { res.render("../views/cuisinier/index", { user: user }); }
 
@@ -114,6 +115,12 @@ usersController.auth = function (req, res) {
             return res.redirect('/utilisateurs/login');
         }
     })
+};
+
+
+// Renvoit à la page pour particulier apres la connexion
+usersController.connecte = function (req, res) {
+    res.render("../views/utilisateurs/index",{session: req.session.nom});
 };
 
 // déconnection

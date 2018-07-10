@@ -21,6 +21,8 @@ router.get("/liste", utilisateur.list);
 //recuperer la liste des utilisateurs
 router.get("/listeutilisateur", utilisateur.listeutilisateur);
 
+//lien vers la page de connection
+router.get('/connecte',utilisateur.connecte)
 
 //accéder à la page d'inscription
 router.get("/ajoutuser", utilisateur.create);
