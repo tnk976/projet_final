@@ -12,7 +12,7 @@
 
     <header class="text-center">
             <h1 class="mt-5 text-uppercase color-orange">
-              <strong>Bienvenue <%= user.prenom %></strong>
+              <strong>Bienvenue <%= session %></strong>
               
             </h1>
             <h2 class="mt-5">Que souhaitez-vous faire? </h2>
@@ -32,11 +32,13 @@
             </ul>
           </div>
         </div>
+
+        <div>
+            <a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/reservations/liste">liste de mes cours</a>
+        </div>
       </main>
 
-      <div>
-          <a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/reservations/liste">liste de mes cours</a>
-      </div>
+      
 
     </div>
     <!-- Optional JavaScript -->
