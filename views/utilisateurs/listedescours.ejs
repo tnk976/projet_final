@@ -28,8 +28,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                     
                     <% reservation.forEach(function(element) {%>
-                       if(<%=session.userId%> === <%=element.id_particulier[0]._id%>){
+                       <% if(session.userId == element.id_particulier[0]._id){%>
                         <tr>
                             <td>
                                 <%= element.id_atelier[0].titre%>
@@ -61,8 +62,9 @@
                                 <img class="w-25" src="<%= element.id_atelier[0].image %>">
                             </td>
                         </tr>
-                            }
+                    <%}%>
                         <%})%>
+                  
                 </tbody>
             </table>
   
