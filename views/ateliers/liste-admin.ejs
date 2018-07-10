@@ -23,6 +23,7 @@
                         <table class="col-lg-8 table table-bordered table-striped mt-5">
                             <thead>
                                 <tr>
+                                    <th scope="col">Formateur</th>
                                     <th scope="col">Titre</th>
                                     <th scope="col">Contenu</th>
                                     <th scope="col">Date</th>
@@ -32,12 +33,18 @@
                                     <th scope="col">Places réservées</th>
                                     <th scope="col">Prix</th>
                                     <th scope="col">Image</th>
+                                    <th scope="col">Active</th>
+                                    
                                     <th scope="col">Modifier</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <% atelier.forEach(function(element) {%>
                                     <tr>
+                                        <td>
+                                            Chef
+                                            <%= element.chef%>
+                                        </td>
                                         <td>
                                             <%= element.titre%>
                                         </td>
@@ -65,7 +72,10 @@
                                             <%= element.prix%>
                                         </td>
                                         <td>
-                                            <img class="w-25" src="<%= element.image %>">
+                                            <img class="w-50" src="<%= element.image %>">
+                                        </td>
+                                        <td>
+                                            <%= element.active%>
                                         </td>
                                         <td>
                                             <a href="/ateliers/edit/<%=element._id %>" role="button">

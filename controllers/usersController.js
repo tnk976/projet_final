@@ -40,7 +40,7 @@ usersController.create = function (req, res) {
 };
 
 
-// Enregistrer un utilisateur  
+// Enregistrer un utilisateur et le connecter
 usersController.save = function (req, res) {
     if (req.body.nom &&
         req.body.prenom &&
@@ -50,16 +50,6 @@ usersController.save = function (req, res) {
 
         var user = new Utilisateur(req.body);
         user.save(function (err, user) {
-            // if (err) {
-            //     console.log(err);
-            //     res.render("../views/utilisateurs/inscription");
-
-            // } else if (req.body.type == "Cuisinier") {
-            //     console.log("login OK");
-            //     res.render("../views/cuisinier/index", { user: user });
-            // } else {
-            //     res.render("../views/utilisateurs/index", { user: user });
-            // }
             if (err) {
                 res.redirect('/utilisateurs/inscription');
             }

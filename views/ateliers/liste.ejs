@@ -25,6 +25,7 @@
                                 <tr>
                                     <th scope="col">Titre</th>
                                     <th scope="col">Contenu</th>
+                                    <th scope="col">Formateur</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Horaire de début</th>
                                     <th scope="col">Durée</th>
@@ -43,6 +44,10 @@
                                         </td>
                                         <td>
                                             <%= element.contenu%>
+                                        </td>
+                                        <td>
+                                            Chef
+                                            <%= element.chef%>
                                         </td>
                                         <td>
                                             <%= (new Date(element.date)).getDate() %>/
@@ -65,7 +70,7 @@
                                             <%= element.prix%>
                                         </td>
                                         <td>
-                                            <img class="w-25" src="<%= element.image %>">
+                                            <img class="w-50" src="<%= element.image %>">
                                         </td>
                                     </tr>
                                     <%};
@@ -79,14 +84,14 @@
 
                 </div>
             </div>
-        </div>
+            </div>
 
-        <div class="text-center">
-            <a href="/reservations">reservation</a>
-        </div>
-    </main>
+            <div class="text-center">
+                <a href="/reservations">reservation</a>
+            </div>
+        </main>
 
-        
+
         <% include ../partials/footer %>
 
 
