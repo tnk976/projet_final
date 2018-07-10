@@ -22,6 +22,18 @@ usersController.list = function (req, res) {
     });
 };
 
+// Liste des utilisateurs inscrits
+usersController.listeutilisateur = function (req, res) {
+    Utilisateur.find({}).exec(function (err, utilisateur) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+            console.log(utilisateur)
+            res.render("../views/utilisateurs/listeutilisateur", { utilisateur: utilisateur });
+        }
+    });
+};
+
 // Renvoit à la page d'inscription
 usersController.create = function (req, res) {
     res.render("../views/utilisateurs/inscription");
@@ -67,6 +79,7 @@ usersController.auth = function (req, res) {
             bcrypt.compare(password, user.password, function (err, result) {
                 console.log(result);
                 if (result === true) {
+                    
                     req.session.userId = user._id;
                     req.session.nom = user.nom;
                     req.session.type = user.type;
@@ -74,7 +87,7 @@ usersController.auth = function (req, res) {
                     req.session.success = 'Connexion Reussie';
                     // var result = '<p>Nom : <p>' + user.nom + ' ' + user.prenom + '<p>Mail: </p>' + user.email + '<br><a type="button" href="/utilisateurs/logout">Logout</a>'   
                     if (req.session.type === "Particulier") {
-                        res.render("../views/utilisateurs/index", { user: user });
+                        res.render("../views/utilisateurs/index", { user: user, session:req.session.userId });
                     }
                     else { res.render("../views/cuisinier/index", { user: user }); }
 

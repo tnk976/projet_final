@@ -49,6 +49,9 @@ app.use("/utilisateurs", utilisateurs);
 var ateliers = require("./routes/ateliers");
 app.use("/ateliers", ateliers);
 
+//routes reservation
+var reservation = require("./routes/reservations");
+app.use("/reservations", reservation);
 
 
 // catch 404 and forward to error handler

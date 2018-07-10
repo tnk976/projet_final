@@ -1,0 +1,9 @@
+var id_utilisateur = "";
+
+<% utilisateur.forEach(function(element){%>
+    id_utilisateur += "<option value='<%=element[0]._id%>' ><%= element[0]%></option>"
+<%})%>
+
+$(document).ready(function() { 
+    $("#test").html(id_utilisateur);
+});
