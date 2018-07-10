@@ -21,7 +21,7 @@ atelierController.list2 = function(req, res) {
         if(err){
             console.log('Error : ', err);
         }else{
-            res.render("../views/ateliers/liste-admin",{atelier:atelier} );
+            res.render("../views/ateliers/liste-admin",{atelier:atelier, session:req.session} );
         } 
     });
   };
@@ -45,17 +45,22 @@ atelierController.create = function (req, res) {
 
 // Enregistrer un atelier  
 atelierController.save = function(req, res){
+    var chef = req.session.nom ;
     var atelier = new Atelier(req.body);
     if(req.body.active === "on"){
         atelier.active = true;
     }else{
         atelier.active = false; 
-    }
+    };
 
+    if(req.body.chef === "on"){
+        atelier.chef = req.session.nom;
+    }
+    
     atelier.save(function(err){
         if(err){
             console.log(err);
-            res.render("../views/ateliers/ajouter", {session:req.session});
+            res.render("../views/ateliers/ajouter");
         } else{
             console.log("creation atelier OK");
             res.redirect("/ateliers/ateliers-admin" );
@@ -97,6 +102,18 @@ atelierController.edit = function(req, res){
     });
 };
 
+//suppression d'un atelier
+atelierController.remove = function(req, res){
+    Atelier.findByIdAndRemove(req.params.id, function (err, atelier){
+
+        if (err){
+            console.log(err);
+            
+        } 
+        res.redirect("/ateliers/ateliers-admin");
+        
+    });
+};
 
 
   //export du module

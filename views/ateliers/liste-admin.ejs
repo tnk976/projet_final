@@ -39,6 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <% 
                                 <% atelier.forEach(function(element) {%>
                                     <tr>
                                         <td>
@@ -80,6 +81,9 @@
                                         <td>
                                             <a href="/ateliers/edit/<%=element._id %>" role="button">
                                                 <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a type="button" class="btn btn-light bg-transparent" href="/ateliers/remove/<%=element._id %>">
+                                                <i class="text-danger fas fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>
