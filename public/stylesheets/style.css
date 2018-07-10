@@ -136,6 +136,7 @@ img::-moz-selection {
   transition: all 0.2s;
 }
 
+
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
@@ -152,7 +153,7 @@ img::-moz-selection {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #212529;
+  color: #ffffff;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -273,6 +274,12 @@ header.masthead p {
   color:#E83B0C;
 
 }
+
+/* .hom{
+
+
+
+} */
 
 .btn {
   font-weight: 700;
