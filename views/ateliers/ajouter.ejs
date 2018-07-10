@@ -17,14 +17,7 @@
 
             <form class="pb-4 mx-auto " action="/ateliers/save" method="POST">
                 <div class="form-group">
-                    <div class=" my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Formateur :</label>
-                        <select class="col-sm-5" name="chef">
-                            <option>
-                                <%=session.nom%>
-                            </option>
-                        </select>
-                    </div>
+                   
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Titre:</label>
                         <input class="col-sm-5" type="text" name="titre" placeholder="titre de l'atelier" required/>
@@ -64,10 +57,15 @@
                         <input class="col-sm-5" type="text" name="image" placeholder="lien" required/>
                     </div>
                     <div class=" my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Activer :</label>
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Rendre l'atelier visible par tous :</label>
                         <input class="col-sm-5" type="checkbox" name="active" />
                     </div>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Veuillez confirmer l'ajout de l'atelier : </label>
+                        <input class="col-sm-5" type="checkbox" name="chef" required/>
+                    </div>
 
+                    
 
                     <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
                 </div>
