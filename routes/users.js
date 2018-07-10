@@ -18,6 +18,10 @@ router.get("/", utilisateur.indexCuisinier);
 //recuperer la liste des utilisateurs
 router.get("/liste", utilisateur.list);
 
+//recuperer la liste des utilisateurs
+router.get("/listeutilisateur", utilisateur.listeutilisateur);
+
+
 //accéder à la page d'inscription
 router.get("/ajoutuser", utilisateur.create);
 

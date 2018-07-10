@@ -18,7 +18,10 @@ router.get("/", atelier.list);
 // Liste des ateliers pour les cuisiniers
 router.get("/ateliers-admin", atelier.list2);
 
-//accéder à la page d'ajout d'un atelier
+//recuperer la liste des utilisateurs
+router.get("/atelierliste", atelier.atelierlist);
+
+//accéder à la page d'inscription
 router.get("/ajoutatelier", requireLogin, atelier.create);
 
 //Créer un atelier
@@ -29,6 +32,7 @@ router.get("/edit/:id", requireLogin, atelier.edit);
 
 // Modifier un atelier  /!\ cest un POST 
 router.post("/update/:id", requireLogin, atelier.update);
+
 
 
 //export du module router

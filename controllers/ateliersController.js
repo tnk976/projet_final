@@ -26,6 +26,17 @@ atelierController.list2 = function(req, res) {
     });
   };
 
+// Lister les ateliers vers atelierliste ejs
+atelierController.atelierlist = function(req, res) {
+    Atelier.find({}).exec(function(err, atelier){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/ateliers/atelierliste",{atelier:atelier} );
+        } 
+    });
+  };
+
 
 // Renvoit à la page d'ajout d'un atelier
 atelierController.create = function (req, res) {
