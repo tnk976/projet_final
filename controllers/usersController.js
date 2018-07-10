@@ -49,15 +49,30 @@ usersController.save = function (req, res) {
         req.body.passwordConfirmation) {
 
         var user = new Utilisateur(req.body);
-        user.save(function (err) {
+        user.save(function (err, user) {
+            // if (err) {
+            //     console.log(err);
+            //     res.render("../views/utilisateurs/inscription");
+
+            // } else if (req.body.type == "Cuisinier") {
+            //     console.log("login OK");
+            //     res.render("../views/cuisinier/index", { user: user });
+            // } else {
+            //     res.render("../views/utilisateurs/index", { user: user });
+            // }
             if (err) {
-                console.log(err);
-                res.render("../views/utilisateurs/inscription");
-            } else if (req.body.type == "Cuisinier") {
-                console.log("login OK");
-                res.render("../views/cuisinier/index", { user: user });
-            } else {
-                res.render("../views/utilisateurs/index", { user: user });
+                res.redirect('/utilisateurs/inscription');
+            }
+            else {
+                req.session.userId = user._id;
+                req.session.nom = user.nom;
+                req.session.type = user.type;
+                req.session.Email = user.email;
+                req.session.success = 'Inscription Reussie';
+                if (req.session.type === "Particulier") {
+                    res.render("../views/utilisateurs/index", { user: user, session: req.session.userId });
+                }
+                else { res.render("../views/cuisinier/index", { user: user }); }
             }
         });
     };
@@ -79,20 +94,18 @@ usersController.auth = function (req, res) {
             bcrypt.compare(password, user.password, function (err, result) {
                 console.log(result);
                 if (result === true) {
-                    
+
                     req.session.userId = user._id;
                     req.session.nom = user.nom;
                     req.session.type = user.type;
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
-                    // var result = '<p>Nom : <p>' + user.nom + ' ' + user.prenom + '<p>Mail: </p>' + user.email + '<br><a type="button" href="/utilisateurs/logout">Logout</a>'   
                     if (req.session.type === "Particulier") {
-                        res.render("../views/utilisateurs/index", { user: user, session:req.session.userId });
+                        res.render("../views/utilisateurs/index", { user: user, session: req.session.userId });
                     }
                     else { res.render("../views/cuisinier/index", { user: user }); }
 
                 } else {
-                    //console.log(req.session.userName);
                     res.redirect('/utilisateurs/login');
                 };
             })
