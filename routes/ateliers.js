@@ -12,8 +12,11 @@ function requireLogin (req, res, next) {
     }
 };
 
-//recuperer la liste des utilisateurs
+//liste des ateliers
 router.get("/", atelier.list);
+
+// Liste des ateliers pour les cuisiniers
+router.get("/ateliers-admin", atelier.list2);
 
 //recuperer la liste des utilisateurs
 router.get("/atelierliste", atelier.atelierlist);
@@ -21,8 +24,14 @@ router.get("/atelierliste", atelier.atelierlist);
 //accéder à la page d'inscription
 router.get("/ajoutatelier", requireLogin, atelier.create);
 
-//Créer un utilisateur / cuisinier
+//Créer un atelier
 router.post("/save", requireLogin, atelier.save);
+
+// editer un atelier
+router.get("/edit/:id", requireLogin, atelier.edit);
+
+// Modifier un atelier  /!\ cest un POST 
+router.post("/update/:id", requireLogin, atelier.update);
 
 
 

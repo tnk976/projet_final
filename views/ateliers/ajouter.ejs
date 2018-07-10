@@ -13,7 +13,7 @@
     <main>
 
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
-            <a class="btn btn-primary mx-auto my-5" href="/ateliers">Retour à la liste des ateliers</a>
+            <a class="btn btn-primary mx-auto my-5" href="/ateliers/ateliers-admin">Retour à la liste des ateliers</a>
 
             <form class="pb-4 mx-auto " action="/ateliers/save" method="POST">
                 <div class="form-group">
@@ -54,6 +54,10 @@
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Image :</label>
                         <input class="col-sm-5" type="text" name="image" placeholder="lien" required/>
+                    </div>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Activer :</label>
+                        <input class="col-sm-5" type="checkbox" name="active" />
                     </div>
                     
                     <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
