@@ -1,9 +1,12 @@
 var ateliers = "";
 
 <% atelier.forEach(function(element){%>
-    ateliers += "<option value='<%=element._id%>' ><%= element.titre%></option>"
-<%})%>
+    ateliers += "<div class='checkbox'><label><input type='checkbox' value='<%=element._id%>'>"<%=element.titre%>"</label></div>"
+
+    <%})%>
 
 $(document).ready(function() { 
     $("#selectatelier").html(ateliers);
 });
+
+

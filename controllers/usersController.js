@@ -56,6 +56,7 @@ usersController.save = function (req, res) {
             else {
                 req.session.userId = user._id;
                 req.session.nom = user.nom;
+                req.session.prenom = user.prenom;
                 req.session.type = user.type;
                 req.session.Email = user.email;
                 req.session.success = 'Inscription Reussie';
@@ -88,13 +89,14 @@ usersController.auth = function (req, res) {
 
                     req.session.userId = user._id;
                     req.session.nom = user.nom;
+                    req.session.prenom = user.prenom;
                     req.session.type = user.type;
                     req.session.Email = user.email;
                     req.session.success = 'Connexion Reussie';
                     if (req.session.type === "Particulier") {
-                        res.render("../views/utilisateurs/index", { user: user, session: req.session.nom });
+                        res.render("../views/utilisateurs/index", { user: user, session: req.session });
                     }
-                    else { res.render("../views/cuisinier/index", { user: user }); }
+                    else { res.render("../views/cuisinier/index", { user: user, session: req.session }); }
 
                 } else {
                     res.redirect('/utilisateurs/login');
@@ -110,7 +112,12 @@ usersController.auth = function (req, res) {
 
 // Renvoit à la page pour particulier apres la connexion
 usersController.connecte = function (req, res) {
-    res.render("../views/utilisateurs/index",{session: req.session.nom});
+    if (req.session.type === "Particulier") {
+        res.render("../views/utilisateurs/index",{session: req.session});
+    }
+    else { res.render("../views/cuisinier/index", {session: req.session}); }
+
+    
 };
 
 // déconnection

@@ -12,23 +12,37 @@
       <h1>reservation</h1>
 
       <form class="pb-4 mx-auto " action="/reservations/save" method="POST">
+        <div id="selectatelier">
+          
 
-        <div class="form-group">
-          <select id="selectatelier" name='id_atelier'>
-          </select>
-          <select id="test" name='id_particulier'>
-            <option value="<%=session.userId%>">
-              <%=session.nom%>
-            </option>
-          </select>
+          <!-- <div class="checkbox">
+              <label>
+                <input type="checkbox" value="PHP">
+                PHP
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Java">
+                Java
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="HTML">
+                HTML
+              </label>
+            </div> -->
+
 
           <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
         </div>
-      </form>
 
-      <div>
-        <a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a>
-      </div>
+      </form>
+    </div>
+    <div>
+      <a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a>
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -40,6 +54,7 @@
       crossorigin="anonymous"></script>
     <script src="/ateliers/atelierliste"></script>
     <script src="/utilisateurs/listeutilisateur"></script>
+
 
 </body>
 
