@@ -97,6 +97,18 @@ atelierController.edit = function(req, res){
     });
 };
 
+//suppression d'un atelier
+atelierController.remove = function(req, res){
+    Atelier.findByIdAndRemove(req.params.id, function (err, atelier){
+
+        if (err){
+            console.log(err);
+            
+        } 
+        res.redirect("/ateliers/ateliers-admin");
+        
+    });
+};
 
 
   //export du module
