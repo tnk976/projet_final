@@ -40,7 +40,7 @@ atelierController.atelierlist = function(req, res) {
 
 // Renvoit à la page d'ajout d'un atelier
 atelierController.create = function (req, res) {
-    res.render("../views/ateliers/ajouter");
+    res.render("../views/ateliers/ajouter" , {session:req.session});
   };
 
 // Enregistrer un atelier  
@@ -55,7 +55,7 @@ atelierController.save = function(req, res){
     atelier.save(function(err){
         if(err){
             console.log(err);
-            res.render("../views/ateliers/ajouter");
+            res.render("../views/ateliers/ajouter", {session:req.session});
         } else{
             console.log("creation atelier OK");
             res.redirect("/ateliers/ateliers-admin" );
