@@ -90,7 +90,8 @@ atelierController.edit = function(req, res){
     }else{
         req.body.active = true;
     }
-
+    console.log("ma place"+ req.body.places_reservees)
+    
     Atelier.findByIdAndUpdate(req.params.id,{ $set :{titre: req.body.titre, contenu: req.body.contenu, date: req.body.date, horaire_debut: req.body.horaire_debut, duree: req.body.duree, places_dispo: req.body.places_dispo, places_reservees: req.body.places_reservees, prix: req.body.prix, image: req.body.image, active: req.body.active } },{new: true}, function (err, atelier){
 
         if (err){
@@ -102,6 +103,23 @@ atelierController.edit = function(req, res){
     });
 };
 
+
+//   Modifier un atelier
+atelierController.updateplace = function(req, res){
+    
+    console.log("ma place"+ req.body.places_reservees)
+    Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
+        var places_reservees = atelier.places_reservees+1;
+        Atelier.findByIdAndUpdate(atelier.id,{ $set :{ places_reservees: places_reservees } },{new: true}, function (err, atelier){
+
+            if (err){ 
+                console.log(err);
+                res.render("../views/ateliers/modifier",{atelier:req.body} );
+            } 
+            res.redirect("/ateliers/ateliers-admin");
+        }); 
+    });
+};
 //suppression d'un atelier
 atelierController.remove = function(req, res){
     Atelier.findByIdAndRemove(req.params.id, function (err, atelier){
