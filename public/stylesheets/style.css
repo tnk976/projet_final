@@ -1,11 +1,21 @@
-nav {
-  padding: 50px;
-  font: 18px "Verdana", Helvetica, Arial, sans-serif;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
--o-background-size: cover;
+
+/* TEMPLATE MODIFIER POUR LE CORPS DE L'APPLICATION */
+
+
+/* PARAMETRES GENERAUX */
+
+body {
+  font-family: 'Verdana', 'Helvetica Neue', Arial, sans-serif;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  
+  font-family: 'Roboto', Arial, sans-serif;
+
+}
+
+
+/* IMAGE EN BACKGROUND */
 
 .accueil{
 
@@ -18,66 +28,16 @@ nav {
 
 }
 
-.nav-views {
-  background: url('/images/accueil.jpg') center center ;
+
+/* NAVBAR */
+
+nav {
   padding: 50px;
+  font: 18px "Verdana", Helvetica, Arial, sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 -o-background-size: cover;
-
-}
-.h-250 {
-  height: 250px;
-}
-
-.color-orange {
-  color: #E83B0C;
-}
-
-.bg-orange {
-  background-color: #E83B0C;
-}
-
-
-
-h4{
-  font: 'Roboto';
-  font-size: 17px;
-  padding-top: 38px;
-
-}
-
-.rounded-circle{
-
-width:140px;
-height:140px;
-background-color: #CF5B61;
-}
-
-
-/* TEST */
-
-
-
-body,
-html {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: 'Verdana', 'Helvetica Neue', Arial, sans-serif;
-}
-
-hr {
-  max-width: 50px;
-  border-width: 3px;
-  border-color: #F05F40;
-}
-
-hr.light {
-  border-color: #fff;
 }
 
 a {
@@ -93,56 +53,6 @@ a:hover {
   color: rgb(255, 255, 255);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.bg-primary {
-  background-color: #E83B0C !important;
-}
-
-.bg-dark {
-  background-color: #212529 !important;
-}
-
-.text-faded {
-  color: #fff;
-}
-
-section {
-  padding: 8rem 0;
-}
-
-.section-heading {
-  margin-top: 0;
-}
-
-::-moz-selection {
-  color: #fff;
-  background: #212529;
-  text-shadow: none;
-}
-
-::selection {
-  color: #fff;
-  background: #212529;
-  text-shadow: none;
-}
-
-img::selection {
-  color: #fff;
-  background: transparent;
-}
-
-img::-moz-selection {
-  color: #fff;
-  background: transparent;
-}
 
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
@@ -231,6 +141,33 @@ img::-moz-selection {
   }
 }
 
+
+/* MODIFICATIONS SPECIFIQUES NAVBAR DE LA PAGE D'ACCUEIL & DES ATELIERS */
+
+.nav-views {
+  background: url('/images/accueil.jpg') center center ;
+  padding: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+-o-background-size: cover;
+
+}
+.h-250 {
+  height: 250px;
+}
+
+.color-orange {
+  color: #E83B0C;
+}
+
+.bg-orange {
+  background-color: #E83B0C;
+}
+
+
+/* PLACEMENTS ET MODIFICATIONS DE BLOCS D'ELEMENTS DANS LE BODY DE LA PAGE D'ACCUEIL */
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
@@ -279,11 +216,7 @@ header.masthead p {
   }
 }
 
-
-
-.text-primary {
-  color: #E83B0C!important;
-}
+/* MODIFICATIONS DE CERTAINS ELEMENTS SPECIFIQUES SUR LE HTML */
 
 .prop{
 
@@ -292,11 +225,20 @@ header.masthead p {
 
 }
 
+.text-faded {
+  color: #fff;
+}
+
+
 .navbar-light .navbar-toggler {
   
   border-color: rgba(255, 255, 255, 0.1);
   
 }
+
+
+
+/* BOUTONS DE TOUTES LES PAGES DE L'APPLICATION */
 
 .btn {
   font-weight: 700;
@@ -313,17 +255,8 @@ header.masthead p {
 
 }
 
-/* .btn:hover, .btn:focus, .btn:active {
-  color: #E83B0C;
-  background-color: #fff !important;
-}
 
-.btn:active, .btn:focus {
-  box-shadow: 0 0 0 0.2rem #E83B0C !important;
-} */
-
-
-/* BOUTON BACK TO TOP */
+/* BOUTON BACK TO TOP SUR LA PAGE D'ACCUEIL */
 
 
 .cont{
@@ -333,7 +266,7 @@ header.masthead p {
 
 }
 
-/* /FOOTER */
+/* FOOTER PAGE D'ACCUEIL */
 
 .footer-distributed{
 	
@@ -482,7 +415,7 @@ header.masthead p {
 	margin-bottom: 5px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
+/* PARAMETRES RESPONSIVE DU FOOTER DE LA PAGE D'ACCUEIL */
 
 @media (max-width: 880px) {
 

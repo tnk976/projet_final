@@ -1,4 +1,5 @@
 
+/* PARAMETRES GENERAUX */
 
 h4{
     font: 'Roboto';
@@ -15,7 +16,7 @@ background-color: #CF5B61;
 }
 
 
-/* /FOOTER ATELIER */
+/* FOOTER ATELIER */
 
 .footer-distributed{
 	
@@ -163,7 +164,7 @@ background-color: #CF5B61;
 	margin-bottom: 5px;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
+/* PARAMETRES RESPONSIVE DU FOOTER DES ATELIERS */
 
 @media (max-width: 880px) {
 
