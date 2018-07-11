@@ -1,11 +1,21 @@
-nav {
-  padding: 50px;
-  font: 18px "Verdana", Helvetica, Arial, sans-serif;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
--o-background-size: cover;
+
+/* TEMPLATE MODIFIER POUR LE CORPS DE L'APPLICATION */
+
+
+/* PARAMETRES GENERAUX */
+
+body {
+  font-family: 'Verdana', 'Helvetica Neue', Arial, sans-serif;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  
+  font-family: 'Roboto', Arial, sans-serif;
+
+}
+
+
+/* IMAGE EN BACKGROUND */
 
 .accueil{
 
@@ -18,37 +28,17 @@ nav {
 
 }
 
-.nav-views {
-  background: url('/images/accueil.jpg') center center ;
+
+/* NAVBAR */
+
+nav {
   padding: 50px;
+  font: 18px "Verdana", Helvetica, Arial, sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 -o-background-size: cover;
-
 }
-.h-250 {
-  height: 250px;
-}
-
-.color-orange {
-  color: #E83B0C;
-}
-
-.bg-orange {
-  background-color: #E83B0C;
-}
-
-
-
-/* TEMPLATE MODIFIER POUR LE CORPS DE LA PAGE */
-
-
-
-body {
-  font-family: 'Verdana', 'Helvetica Neue', Arial, sans-serif;
-}
-
 
 a {
   color: rgb(255, 255, 255);
@@ -63,20 +53,6 @@ a:hover {
   color: rgb(255, 255, 255);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Roboto', Arial, sans-serif;
-}
-
-.text-faded {
-  color: #fff;
-}
-
-/* NAVBAR */
 
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
@@ -165,7 +141,32 @@ h6 {
   }
 }
 
-/* PLACEMENT DES ELEMENTS DANS LE BODY */
+
+/* MODIFICATIONS SPECIFIQUES NAVBAR DE LA PAGE D'ACCUEIL & DES ATELIERS */
+
+.nav-views {
+  background: url('/images/accueil.jpg') center center ;
+  padding: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+-o-background-size: cover;
+
+}
+.h-250 {
+  height: 250px;
+}
+
+.color-orange {
+  color: #E83B0C;
+}
+
+.bg-orange {
+  background-color: #E83B0C;
+}
+
+
+/* PLACEMENTS ET MODIFICATIONS DE BLOCS D'ELEMENTS DANS LE BODY DE LA PAGE D'ACCUEIL */
 
 header.masthead {
   padding-top: 10rem;
@@ -224,11 +225,18 @@ header.masthead p {
 
 }
 
+.text-faded {
+  color: #fff;
+}
+
+
 .navbar-light .navbar-toggler {
   
   border-color: rgba(255, 255, 255, 0.1);
   
 }
+
+
 
 /* BOUTONS DE TOUTES LES PAGES DE L'APPLICATION */
 
@@ -407,7 +415,7 @@ header.masthead p {
 	margin-bottom: 5px;
 }
 
-/* PARAMETRES RESPONSIVE DU FOOTER */
+/* PARAMETRES RESPONSIVE DU FOOTER DE LA PAGE D'ACCUEIL */
 
 @media (max-width: 880px) {
 
