@@ -13,15 +13,10 @@
 </head>
 
 <body>
-  <% include ../partials/nav %>
+  <% include ../partials/navConnecte %>
     <div class="text-center">
       <h1>reservation</h1>
-
-
-
-
-   
-
+  
       <form class="pb-4 mx-auto " action="/reservations/save" method="POST">
         <div class="form-group">
           <select id="selectatelier" name='id_atelier'>
@@ -31,12 +26,12 @@
               <%=session.nom%>
             </option>
           </select>
-          <button id="upreserve" type="submit" class="btn my-5">Ajouter</button>
+          <button id="upreserve" type="submit" class="btn btn-secondary my-5">Ajouter</button>
         </div>
 
       </form>
       <div>
-        <a class="btn text-light btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a>
+        <a class="btn btn-secondary text-light btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a>
       </div>
     </div>
     <!-- Optional JavaScript -->
