@@ -1,0 +1,14 @@
+var ateliers = "";
+
+<% ateliers.forEach(function(element) {%>
+    ateliers += "<div class='checkbox'><label><input type='checkbox' value='<%=id_atelier%>'>"<%=ateliers.titre%>"</label></div>"
+    
+<% }); %>
+
+$(document).ready(function() { 
+    $("#selecta").html(ateliers);
+});
+
+
+
+

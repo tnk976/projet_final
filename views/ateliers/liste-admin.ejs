@@ -9,12 +9,17 @@
 
     <% include ../partials/nav %>
 
+        <div>
+            <a class="nav-link js-scroll-trigger" href="/utilisateurs/logout">Se déconnecter</a>
+        </div>
 
         <main>
             <div class="container ">
                 <div class="row justify-content-center">
                     <div class="m-4 text-center">
-                        <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
+                        <h4 class="rounded-circle mx-auto my-5">ATELIERS de Chef
+                            <%=session.nom%>
+                        </h4>
                     </div>
 
                     <!--Tableau des différents ateliers-->
@@ -34,60 +39,60 @@
                                     <th scope="col">Prix</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Active</th>
-                                    
+
                                     <th scope="col">Modifier</th>
                                 </tr>
                             </thead>
                             <tbody>
-                               
                                 <% atelier.forEach(function(element) {%>
-                                    <tr>
-                                        <td>
-                                            Chef
-                                            <%= element.chef%>
-                                        </td>
-                                        <td>
-                                            <%= element.titre%>
-                                        </td>
-                                        <td>
-                                            <%= element.contenu%>
-                                        </td>
-                                        <td>
-                                            <%= (new Date(element.date)).getDate() %>/
-                                                <%= (new Date(element.date)).getMonth()+1 %>/
-                                                    <%= new Date(element.date).getFullYear() %>
-                                        </td>
-                                        <td>
-                                            <%= element.horaire_debut %>
-                                        </td>
-                                        <td>
-                                            <%= element.duree%>
-                                        </td>
-                                        <td>
-                                            <%= element.places_dispo%>
-                                        </td>
-                                        <td>
-                                            <%= element.places_reservees%>
-                                        </td>
-                                        <td>
-                                            <%= element.prix%>
-                                        </td>
-                                        <td>
-                                            <img class="w-50" src="<%= element.image %>">
-                                        </td>
-                                        <td>
-                                            <%= element.active%>
-                                        </td>
-                                        <td>
-                                            <a href="/ateliers/edit/<%=element._id %>" role="button">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a type="button" class="btn btn-light bg-transparent" href="/ateliers/remove/<%=element._id %>">
-                                                <i class="text-danger fas fa-trash-alt"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <%})%>
+                                    <% if(session.nom == element.chef) {%>
+                                        <tr>
+                                            <td>
+                                                Chef
+                                                <%= element.chef%>
+                                            </td>
+                                            <td>
+                                                <%= element.titre%>
+                                            </td>
+                                            <td>
+                                                <%= element.contenu%>
+                                            </td>
+                                            <td>
+                                                <%= (new Date(element.date)).getDate() %>/
+                                                    <%= (new Date(element.date)).getMonth()+1 %>/
+                                                        <%= new Date(element.date).getFullYear() %>
+                                            </td>
+                                            <td>
+                                                <%= element.horaire_debut %>
+                                            </td>
+                                            <td>
+                                                <%= element.duree%>
+                                            </td>
+                                            <td>
+                                                <%= element.places_dispo%>
+                                            </td>
+                                            <td>
+                                                <%= element.places_reservees%>
+                                            </td>
+                                            <td>
+                                                <%= element.prix%>
+                                            </td>
+                                            <td>
+                                                <img class="w-50" src="<%= element.image %>">
+                                            </td>
+                                            <td>
+                                                <%= element.active%>
+                                            </td>
+                                            <td>
+                                                <a href="/ateliers/edit/<%=element._id %>" role="button">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a type="button" class="btn btn-light bg-transparent" href="/ateliers/remove/<%=element._id %>">
+                                                    <i class="text-danger fas fa-trash-alt"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <%}})%>
                             </tbody>
                         </table>
 

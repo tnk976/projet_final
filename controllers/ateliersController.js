@@ -16,7 +16,7 @@ atelierController.list = function(req, res) {
   };
 
 // Liste des ateliers pour les cuisiniers
-atelierController.list2 = function(req, res) {
+atelierController.listadmin = function(req, res) {
     Atelier.find({}).exec(function(err, atelier){
         if(err){
             console.log('Error : ', err);
@@ -27,12 +27,12 @@ atelierController.list2 = function(req, res) {
   };
 
 // Lister les ateliers vers atelierliste ejs
-atelierController.atelierlist = function(req, res) {
+atelierController.selectatelier = function(req, res) {
     Atelier.find({}).exec(function(err, atelier){
         if(err){
             console.log('Error : ', err);
         }else{
-            res.render("../views/ateliers/atelierliste",{atelier:atelier} );
+            res.render("../views/ateliers/selectatelier",{atelier:atelier} );
         } 
     });
   };
@@ -106,8 +106,7 @@ atelierController.edit = function(req, res){
 
 //   Modifier un atelier
 atelierController.updateplace = function(req, res){
-    
-    console.log("ma place"+ req.body.places_reservees)
+
     Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
         var places_reservees = atelier.places_reservees+1;
         Atelier.findByIdAndUpdate(atelier.id,{ $set :{ places_reservees: places_reservees } },{new: true}, function (err, atelier){
