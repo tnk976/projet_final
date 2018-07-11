@@ -33,6 +33,9 @@ router.get("/edit/:id", requireLogin, atelier.edit);
 // Modifier un atelier  /!\ cest un POST 
 router.post("/update/:id", requireLogin, atelier.update);
 
+// Modifier un atelier  /!\ cest un POST 
+router.post("/updateplace/:id", requireLogin, atelier.updateplace);
+
 // supprimer un atelier
 router.get("/remove/:id", requireLogin, atelier.remove);
 
