@@ -275,11 +275,11 @@ header.masthead p {
 
 }
 
-/* .hom{
-
-
-
-} */
+.navbar-light .navbar-toggler {
+  
+  border-color: rgba(255, 255, 255, 0.1);
+  
+}
 
 .btn {
   font-weight: 700;

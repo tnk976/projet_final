@@ -16,6 +16,12 @@
   <% include ../partials/nav %>
     <div class="text-center">
       <h1>reservation</h1>
+
+
+
+
+   
+
       <form class="pb-4 mx-auto " action="/reservations/save" method="POST">
         <div class="form-group">
           <select id="selectatelier" name='id_atelier'>
@@ -27,6 +33,7 @@
           </select>
           <button id="upreserve" type="submit" class="btn btn-secondary my-5">Ajouter</button>
         </div>
+
       </form>
       <div>
         <a class="btn btn-primary btn-xl js-scroll-trigger mt-5" href="/ateliers">Liste des Ateliers</a>
@@ -39,8 +46,9 @@
       crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"></script>
-    <script src="/ateliers/atelierliste"></script>
-    <script src="reserveplus.js"></script>
+    <script src="/ateliers/selectatelier"></script>
+    <script src="modifie_placesreservees.js"></script>
+
 
 
 </body>
