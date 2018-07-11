@@ -90,7 +90,6 @@ atelierController.edit = function(req, res){
     }else{
         req.body.active = true;
     }
-    console.log("ma place"+ req.body.places_reservees)
     
     Atelier.findByIdAndUpdate(req.params.id,{ $set :{titre: req.body.titre, contenu: req.body.contenu, date: req.body.date, horaire_debut: req.body.horaire_debut, duree: req.body.duree, places_dispo: req.body.places_dispo, places_reservees: req.body.places_reservees, prix: req.body.prix, image: req.body.image, active: req.body.active } },{new: true}, function (err, atelier){
 

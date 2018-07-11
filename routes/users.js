@@ -8,7 +8,7 @@ function requireLogin (req, res, next) {
     }else {
         var err = new Error('error 404');
         err.status = 401;
-        res.redirect('/utilisateurs/ajoutuser');
+        res.redirect('/utilisateurs/login');
     }
 };
 
@@ -18,8 +18,8 @@ router.get("/", utilisateur.indexCuisinier);
 //recuperer la liste des utilisateurs
 router.get("/liste", utilisateur.list);
 
-//lien vers la page de connection
-router.get('/connecte',utilisateur.connecte)
+//lien vers la page d'accueil une fois connecté
+router.get('/connecte', requireLogin, utilisateur.connecte)
 
 //accéder à la page d'inscription
 router.get("/ajoutuser", utilisateur.create);
