@@ -29,7 +29,7 @@ var Reservation = require ("../models/reservation");
           if(err){
               console.log('Error : ', err);
           }else{
-            console.log("woooooooow=========="+ reservations)
+
               res.render("../views/utilisateurs/listedescours",{reservation:reservations, session:req.session} );
           } 
       });
