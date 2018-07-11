@@ -16,7 +16,7 @@ atelierController.list = function(req, res) {
   };
 
 // Liste des ateliers pour les cuisiniers
-atelierController.list2 = function(req, res) {
+atelierController.listadmin = function(req, res) {
     Atelier.find({}).exec(function(err, atelier){
         if(err){
             console.log('Error : ', err);
@@ -27,12 +27,12 @@ atelierController.list2 = function(req, res) {
   };
 
 // Lister les ateliers vers atelierliste ejs
-atelierController.atelierlist = function(req, res) {
+atelierController.selectatelier = function(req, res) {
     Atelier.find({}).exec(function(err, atelier){
         if(err){
             console.log('Error : ', err);
         }else{
-            res.render("../views/ateliers/atelierliste",{atelier:atelier} );
+            res.render("../views/ateliers/selectatelier",{atelier:atelier} );
         } 
     });
   };
@@ -90,7 +90,8 @@ atelierController.edit = function(req, res){
     }else{
         req.body.active = true;
     }
-
+    console.log("ma place"+ req.body.places_reservees)
+    
     Atelier.findByIdAndUpdate(req.params.id,{ $set :{titre: req.body.titre, contenu: req.body.contenu, date: req.body.date, horaire_debut: req.body.horaire_debut, duree: req.body.duree, places_dispo: req.body.places_dispo, places_reservees: req.body.places_reservees, prix: req.body.prix, image: req.body.image, active: req.body.active } },{new: true}, function (err, atelier){
 
         if (err){
@@ -102,6 +103,22 @@ atelierController.edit = function(req, res){
     });
 };
 
+
+//   Modifier un atelier
+atelierController.updateplace = function(req, res){
+
+    Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
+        var places_reservees = atelier.places_reservees+1;
+        Atelier.findByIdAndUpdate(atelier.id,{ $set :{ places_reservees: places_reservees } },{new: true}, function (err, atelier){
+
+            if (err){ 
+                console.log(err);
+                res.render("../views/ateliers/modifier",{atelier:req.body} );
+            } 
+            res.redirect("/ateliers/ateliers-admin");
+        }); 
+    });
+};
 //suppression d'un atelier
 atelierController.remove = function(req, res){
     Atelier.findByIdAndRemove(req.params.id, function (err, atelier){

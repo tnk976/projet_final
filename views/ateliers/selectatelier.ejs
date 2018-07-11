@@ -5,6 +5,10 @@ var ateliers = "";
 
     <%})%>
 
+    
+    ateliers += "<option value='<%=element._id%>' ><%= element.titre%></option>";
+<%})%>
+
 $(document).ready(function() { 
     $("#selectatelier").html(ateliers);
 });

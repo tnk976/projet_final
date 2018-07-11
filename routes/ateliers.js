@@ -16,7 +16,7 @@ function requireLogin (req, res, next) {
 router.get("/", atelier.list);
 
 // Liste des ateliers pour les cuisiniers
-router.get("/ateliers-admin", requireLogin, atelier.list2);
+router.get("/ateliers-admin", requireLogin, atelier.listadmin);
 
 //accéder à la page d'inscription
 router.get("/ajoutatelier", requireLogin, atelier.create);
@@ -25,13 +25,16 @@ router.get("/ajoutatelier", requireLogin, atelier.create);
 router.post("/save", requireLogin, atelier.save);
 
 //recuperer la liste des utilisateurs
-router.get("/atelierliste", atelier.atelierlist);
+router.get("/selectatelier", atelier.selectatelier);
 
 // editer un atelier
 router.get("/edit/:id", requireLogin, atelier.edit);
 
 // Modifier un atelier  /!\ cest un POST 
 router.post("/update/:id", requireLogin, atelier.update);
+
+// Modifier un atelier  /!\ cest un POST 
+router.post("/updateplace/:id", requireLogin, atelier.updateplace);
 
 // supprimer un atelier
 router.get("/remove/:id", requireLogin, atelier.remove);
