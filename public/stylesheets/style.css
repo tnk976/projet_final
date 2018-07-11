@@ -41,6 +41,21 @@ nav {
 
 
 
+h4{
+  font: 'Roboto';
+  font-size: 17px;
+  padding-top: 38px;
+
+}
+
+.rounded-circle{
+
+width:140px;
+height:140px;
+background-color: #CF5B61;
+}
+
+
 /* TEST */
 
 
@@ -66,14 +81,16 @@ hr.light {
 }
 
 a {
-  color: #E83B0C;
+  color: rgb(255, 255, 255);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 a:hover {
-  color: #E83B0C;
+  color: rgb(255, 255, 255);
 }
 
 h1,
@@ -287,25 +304,23 @@ header.masthead p {
   border: none;
   border-radius: 300px;
   font-family: 'Verdana', Arial, sans-serif;
-}
-
-.btn-xl {
-  padding: 1rem 2rem;
-}
-
-.btn-primary {
   background-color: #E83B0C;
   border-color: #fff;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-xl {
+  padding: 1rem 2rem;
+
+}
+
+/* .btn:hover, .btn:focus, .btn:active {
   color: #E83B0C;
   background-color: #fff !important;
 }
 
-.btn-primary:active, .btn-primary:focus {
+.btn:active, .btn:focus {
   box-shadow: 0 0 0 0.2rem #E83B0C !important;
-}
+} */
 
 
 /* BOUTON BACK TO TOP */

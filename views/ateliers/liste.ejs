@@ -12,79 +12,57 @@
 
         <main>
             <div class="container ">
-                <div class="row justify-content-center">
-                    <div class="m-4 text-center">
+                <div class="d-flex justify-content-center">
+                    <div class=" m-4 text-center">
                         <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
                     </div>
-
-                    <!--Tableau des différents ateliers-->
-
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped mt-5">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Titre</th>
-                                    <th scope="col">Contenu</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Horaire de début</th>
-                                    <th scope="col">Durée</th>
-                                    <th scope="col">Places disponibles</th>
-                                    <th scope="col">Places réservées</th>
-                                    <th scope="col">Prix</th>
-                                    <th scope="col">Image</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <% atelier.forEach(function(element) {
-                                    if (element.active == true) {%>
-                                    <tr>
-                                        <td>
-                                            <%= element.titre%>
-                                        </td>
-                                        <td>
-                                            <%= element.contenu%>
-                                        </td>
-                                        <td>
-                                            <%= (new Date(element.date)).getDate() %>/
-                                                <%= (new Date(element.date)).getMonth()+1 %>/
-                                                    <%= new Date(element.date).getFullYear() %>
-                                        </td>
-                                        <td>
-                                            <%= element.horaire_debut %>
-                                        </td>
-                                        <td>
-                                            <%= element.duree%>
-                                        </td>
-                                        <td>
-                                            <%= element.places_dispo%>
-                                        </td>
-                                        <td>
-                                            <%= element.places_reservees%>
-                                        </td>
-                                        <td>
-                                            <%= element.prix%>
-                                        </td>
-                                        <td>
-                                            <img class="w-25" src="<%= element.image %>">
-                                        </td>
-                                    </tr>
-                                    <%};
-                                })%>
-                            </tbody>
-                        </table>
-
-                        <table class="table table-bordered table-striped mt-5">
-                    </div>
-
-
-
                 </div>
+                <!--Tableau des différents ateliers-->
+
+                <div class="row">
+
+                    <% atelier.forEach(function(element) {
+                                    if (element.active == true) {%>
+                        <div class="card mx-4" style="width: 18rem;">
+                            <img class="card-img-top" src="<%= element.image %>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= element.titre%>
+                                </h5>
+                                <p class="card-text">
+                                    <%= element.contenu%>
+                                </p>
+                                <p class="card-text">
+                                    <%= (new Date(element.date)).getDate() %>/
+                                        <%= (new Date(element.date)).getMonth()+1 %>/
+                                            <%= new Date(element.date).getFullYear() %>
+                                </p>
+                                <p class="card-text">
+                                    <%= element.horaire_debut %>
+                                </p>
+                                <p class="card-text">
+                                    <%= element.duree%>
+                                </p>
+                                <p class="card-text">
+                                    <%= element.places_dispo%>
+                                </p>
+                                <p class="card-text">
+                                    <%= element.places_reservees%>
+                                </p>
+                                <p class="card-text">
+                                    <%= element.prix%>
+                                </p>
+                            </div>
+                        </div>
+                        <%};
+                                })%>
+                </div>
+            </div>
             </div>
             </div>
 
             <div class="text-center">
-                <a href="/reservations">reservation</a>
+                <a class "reserv" href="/reservations">reservation</a>
             </div>
         </main>
 
@@ -95,8 +73,7 @@
 
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
