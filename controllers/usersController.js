@@ -7,7 +7,7 @@ var usersController = {};
 
 // Renvoit à la page d'accueil cuisiniers
 usersController.indexCuisinier = function (req, res) {
-    res.render("../views/cuisinier/index");
+    res.render("../views/cuisinier/index", {session: req.session.userId });
 };
 
 

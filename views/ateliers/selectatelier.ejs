@@ -1,12 +1,8 @@
 var ateliers = "";
+<% atelier.forEach(function(element){%> 
+    ateliers += "<option value='<%=element._id%>'><%= element.titre%></option>";
 
-<% atelier.forEach(function(element){%>
-
-    ateliers += "<option value='<%=element._id%>' ><%= element.titre%></option>";
-<%})%>
-
-$(document).ready(function() { 
-    $("#selectatelier").html(ateliers);
-});
-
-
+    <%})%>
+    
+$(document).ready(function() 
+{ $("#selectatelier").html(ateliers); });
