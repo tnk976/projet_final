@@ -1,11 +1,7 @@
 var ateliers = "";
 
 <% atelier.forEach(function(element){%>
-    ateliers += "<div class='checkbox'><label><input type='checkbox' value='<%=element._id%>'>"<%=element.titre%>"</label></div>"
 
-    <%})%>
-
-    
     ateliers += "<option value='<%=element._id%>' ><%= element.titre%></option>";
 <%})%>
 
