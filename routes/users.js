@@ -13,10 +13,10 @@ function requireLogin (req, res, next) {
 };
 
 // page d'accueil pour les utilisateurs une fois connectés
-router.get("/", utilisateur.indexCuisinier);
+router.get("/", requireLogin, utilisateur.indexCuisinier);
 
 //recuperer la liste des utilisateurs
-router.get("/liste", utilisateur.list);
+router.get("/liste", requireLogin, utilisateur.list);
 
 //lien vers la page d'accueil une fois connecté
 router.get('/connecte', requireLogin, utilisateur.connecte)

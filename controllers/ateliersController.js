@@ -108,7 +108,8 @@ atelierController.updateplace = function(req, res){
 
     Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
         var places_reservees = atelier.places_reservees+1;
-        Atelier.findByIdAndUpdate(atelier.id,{ $set :{ places_reservees: places_reservees } },{new: true}, function (err, atelier){
+        var places_dispo = atelier.places_dispo-1
+        Atelier.findByIdAndUpdate(atelier.id,{ $set :{ places_reservees: places_reservees,places_dispo:places_dispo } },{new: true}, function (err, atelier){
 
             if (err){ 
                 console.log(err);
