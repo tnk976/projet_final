@@ -9,9 +9,9 @@ atelierController.list = function (req, res) {
     Atelier.find({}).exec(function (err, atelier) {
         if (err) {
             console.log('Error : ', err);
-        } else {
-            res.render("../views/ateliers/liste", { atelier: atelier });
-        }
+        }else{
+            res.render("../views/ateliers/liste",{atelier:atelier,session:req.session} );
+        } 
     });
 };
 
