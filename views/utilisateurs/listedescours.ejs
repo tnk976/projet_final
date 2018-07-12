@@ -11,7 +11,9 @@
 
 
         <div class="container text-center">
-            <h1 class="my-5">Réservations de <%= session.prenom %></h1>
+            <h1 class="my-5">Réservations de
+                <%= session.prenom %>
+            </h1>
             <a href="/ateliers">Retour à la liste des Ateliers</a>
 
             <table class="col-lg-8 table table-bordered table-striped mt-5">
@@ -33,7 +35,7 @@
                 <tbody>
 
                     <% reservation.forEach(function(element) {%>
-                        if(session.userId == element.id_particulier) {
+                        <% if(session.userId == element.id_particulier[0]._id) {%>
                         <tr>
                             <td>
                                 <%= element.id_atelier[0].titre%>
@@ -69,12 +71,12 @@
                                 </a>
                             </td>
                         </tr>
-<%}%>
-                        <%})%>
+
+                        <%};})%>
 
                 </tbody>
             </table>
-            
+
         </div>
 
 
