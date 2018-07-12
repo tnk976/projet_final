@@ -36,8 +36,6 @@
                                                         <%= element.horaire_debut %>
                                         </small>
                                 </h4>
-
-
                                 <p class="card-text">
                                     <%= element.contenu%>
                                 </p>
@@ -55,7 +53,11 @@
                                     <%= element.prix%> €
                                 </p>
                             </div>
+                            <div class="text-center">
+                                <a class "reserv" href="/reservations/valider/<%=element.id%>">Réserver</a>
+                            </div>
                         </div>
+
                         <%};
                                 })%>
                 </div>
@@ -63,9 +65,7 @@
             </div>
             </div>
 
-            <div class="text-center">
-                <a class "reserv" href="/reservations">reservation</a>
-            </div>
+
         </main>
 
         <div class="container">

@@ -16,7 +16,7 @@ function requireLogin (req, res, next) {
 router.get("/", requireLogin, utilisateur.indexCuisinier);
 
 //recuperer la liste des utilisateurs
-router.get("/liste", requireLogin, utilisateur.list);
+router.get("/liste", utilisateur.list);
 
 //lien vers la page d'accueil une fois connecté
 router.get('/connecte', requireLogin, utilisateur.connecte)
