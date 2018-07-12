@@ -6,8 +6,14 @@
 </head>
 
 <body>
-
-    <% include ../partials/nav %>
+    
+    <%if(session.userId == undefined){%>
+        <% include ../partials/nav %>
+        
+    <%} else {%>
+        <% include ../partials/navConnecte %>
+    <%}%>
+    
 
 
         <main>
@@ -22,8 +28,8 @@
                 <div class="row">
 
                     <% atelier.forEach(function(element) {
-                                    if (element.active == true && element.places_dispo > 0) {%>
-                        <div class="card mx-4" style="width: 18rem;">
+                                    if (element.active == true && element.places_reservees <= element.places_dispo) {%>
+                        <div class="card mx-4 text-center" style="width: 18rem;">
                             <img class="card-img-top" src="<%= element.image %>" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title color-orange">
@@ -54,9 +60,16 @@
                                 </p>
                             </div>
                             
-                            <div class="text-center mb-4">
-                                <a class="btn text-light" id="set" href="/reservations/valider/<%=element.id%>">Réserver</a>
-                            </div>
+                            <%if(session.userId !== undefined){%>
+                                <div class="text-center mb-4">
+                                        <a class="btn text-light" id="set" href="/reservations/valider/<%=element.id%>">Réserver</a>
+                                    </div>
+                                
+                            <%} else {%>
+                                <p>Se connecter pour réserver</p>
+                            <%}%>
+                            
+                            
                             
                         </div>
 
