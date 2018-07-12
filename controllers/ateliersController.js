@@ -10,7 +10,7 @@ atelierController.list = function(req, res) {
         if(err){
             console.log('Error : ', err);
         }else{
-            res.render("../views/ateliers/liste",{atelier:atelier} );
+            res.render("../views/ateliers/liste",{atelier:atelier,session:req.session} );
         } 
     });
   };

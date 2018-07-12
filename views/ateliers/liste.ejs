@@ -6,8 +6,13 @@
 </head>
 
 <body>
-
-    <% include ../partials/nav %>
+    
+    <%if(session !== undefined){%>
+        <% include ../partials/navConnecte %>
+    <%} else {%>
+        <% include ../partials/nav %>
+    <%}%>
+    
 
 
         <main>
