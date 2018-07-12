@@ -36,6 +36,8 @@ reservationController.list = function (req, res) {
       } else {
 
         console.log(reservations);
+        // res.redirect("/reservations/liste");
+
         res.render("../views/utilisateurs/listedescours", { reservation: reservations, session: req.session });
       }
     });
