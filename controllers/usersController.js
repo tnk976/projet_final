@@ -57,9 +57,9 @@ usersController.save = function (req, res) {
                 req.session.Email = user.email;
                 req.session.success = 'Inscription Reussie';
                 if (req.session.type === "Particulier") {
-                    res.render("../views/utilisateurs/index", { user: user, session: req.session.userId });
+                    res.render("../views/utilisateurs/index", { user: user, session: req.session });
                 }
-                else { res.render("../views/cuisinier/index", { user: user }); }
+                else { res.render("../views/cuisinier/index", { user: user, session: req.session }); }
             }
         });
     };
