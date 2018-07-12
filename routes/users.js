@@ -15,11 +15,11 @@ function requireLogin (req, res, next) {
 // page d'accueil pour les utilisateurs une fois connectés
 router.get("/", requireLogin, utilisateur.indexCuisinier);
 
+//lien vers la page d'accueil une fois connecté
+router.get('/index', requireLogin, utilisateur.indexParticulier)
+
 //recuperer la liste des utilisateurs
 router.get("/liste", utilisateur.list);
-
-//lien vers la page d'accueil une fois connecté
-router.get('/connecte', requireLogin, utilisateur.connecte)
 
 //accéder à la page d'inscription
 router.get("/ajoutuser", utilisateur.create);
