@@ -47,7 +47,7 @@ usersController.save = function (req, res) {
         var user = new Utilisateur(req.body);
         user.save(function (err, user) {
             if (err) {
-                res.redirect('/utilisateurs/inscription');
+                res.redirect('/utilisateurs/index');
             }
             else {
                 req.session.userId = user._id;
