@@ -7,7 +7,7 @@ var usersController = {};
 
 // Renvoit à la page d'accueil cuisiniers
 usersController.indexCuisinier = function (req, res) {
-    res.render("../views/cuisinier/index", {session: req.session.userId });
+    res.render("../views/cuisinier/index", {session: req.session });
 };
 
 
@@ -47,7 +47,7 @@ usersController.save = function (req, res) {
         var user = new Utilisateur(req.body);
         user.save(function (err, user) {
             if (err) {
-                res.redirect('/utilisateurs/inscription');
+                res.redirect('/utilisateurs/index');
             }
             else {
                 req.session.userId = user._id;
@@ -57,9 +57,9 @@ usersController.save = function (req, res) {
                 req.session.Email = user.email;
                 req.session.success = 'Inscription Reussie';
                 if (req.session.type === "Particulier") {
-                    res.render("../views/utilisateurs/index", { user: user, session: req.session.userId });
+                    res.render("../views/utilisateurs/index", { user: user, session: req.session });
                 }
-                else { res.render("../views/cuisinier/index", { user: user }); }
+                else { res.render("../views/cuisinier/index", { user: user, session: req.session }); }
             }
         });
     };
