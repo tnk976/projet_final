@@ -14,13 +14,19 @@ function requireLogin (req, res, next) {
 };
 
 // lien vers page reservation
-router.get("/", requireLogin, reservation.create);
+// router.get("/", requireLogin, reservation.create);
 
 //creer une reservation
-router.post("/save", requireLogin, reservation.save);
+// router.post("/save", requireLogin, reservation.save);
 
 //creer une liste
 router.get("/liste", requireLogin, reservation.list);
+
+// Réserver un atelier
+router.get("/valider/:id", requireLogin, reservation.valider);
+
+// supprimer une réservation
+router.get("/remove/:id", requireLogin, reservation.remove);
 
 
 //export du module router
