@@ -96,15 +96,29 @@ atelierController.update = function (req, res) {
 atelierController.updateplacedispo = function (req, res) {
 
     Atelier.findOne({ _id: req.params.id }).exec(function (err, atelier) {
+
         var places_reservees = atelier.places_reservees + 1;
-        var places_dispo = atelier.places_dispo - 1
-        Atelier.findByIdAndUpdate(atelier.id, { $set: { places_reservees: places_reservees, places_dispo: places_dispo } }, { new: true }, function (err, atelier) {
+        Atelier.findByIdAndUpdate(atelier.id, { $set: { places_reservees: places_reservees } }, { new: true }, function (err, atelier) {
 
             if (err) {
                 console.log(err);
-                // res.render("../views/ateliers/modifier", { atelier: req.body });
             }
-            // res.redirect("/ateliers/ateliers-admin");
+        });
+    });
+};
+
+
+atelierController.replaceplacedispo = function (reservations, res) {
+    Atelier.findOne({ _id: reservations.id_atelier }).exec(function (err, atelier) {
+
+        var places_reservees = atelier.places_reservees;
+        if (places_reservees <= atelier.places_dispo && places_reservees > 0) {
+            places_reservees = atelier.places_reservees - 1;
+        }
+        Atelier.findByIdAndUpdate(atelier.id, { $set: { places_reservees: places_reservees } }, { new: true }, function (err, atelier) {
+            if (err) {
+                console.log(err);
+            }
         });
     });
 };
