@@ -41,11 +41,11 @@
                     </div>
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Places disponibles:</label>
-                        <input class="col-sm-5" type="number" name="places_dispo" value="<%= atelier.places_dispo %>"/>
+                        <input class="col-sm-5" type="number" min="0" name="places_dispo" value="<%= atelier.places_dispo %>"/>
                     </div>
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Places réservées :</label>
-                        <input class="col-sm-5" type="number" name="places_reservees" value="<%= atelier.places_reservees %>"/>
+                        <input class="col-sm-5" type="number" min="0" name="places_reservees" value="<%= atelier.places_reservees %>"/>
                     </div>
                     <div class=" my-3">
                         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Tarif :</label>
