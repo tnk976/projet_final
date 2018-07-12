@@ -6,101 +6,103 @@
 </head>
 
 <body>
-    
+
     <%if(session.userId == undefined){%>
         <% include ../partials/nav %>
-        
-    <%} else {%>
-        <% include ../partials/navConnecte %>
-    <%}%>
-    
 
+            <%} else {%>
+                <% include ../partials/navConnecte %>
+                    <%}%>
 
-        <main>
-            <div class="container ">
-                <div class="d-flex justify-content-center">
-                    <div class=" m-4 text-center">
-                        <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
-                    </div>
-                </div>
-                <!--Tableau des différents ateliers-->
-
-                <div class="row">
-
-                    <% atelier.forEach(function(element) {
-                                    if (element.active == true && element.places_reservees <= element.places_dispo) {%>
-                        <div class="card mx-4 text-center" style="width: 18rem;">
-                            <img class="card-img-top" src="<%= element.image %>" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title color-orange">
-                                    Atelier de
-                                    <%= element.titre%>
-                                        <small>Le
-                                            <%= (new Date(element.date)).getDate() %> /
-                                                <%= (new Date(element.date)).getMonth()+1 %> /
-                                                    <%= new Date(element.date).getFullYear() %> à
-                                                        <%= element.horaire_debut %>
-                                        </small>
-                                </h4>
-                                <p class="card-text">
-                                    <%= element.contenu%>
-                                </p>
-
-                                <p class="card-text">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <%= element.duree%> min
-                                </p>
-                                <p class="card-text">
-                                    Places disponibles :
-                                    <%= element.places_dispo%>
-                                </p>
-                                <p class="card-text">
-                                    Tarif :
-                                    <%= element.prix%> €
-                                </p>
-                            </div>
-                            
-                            <%if(session.userId !== undefined){%>
-                                <div class="text-center mb-4">
-                                        <a class="btn text-light" id="set" href="/reservations/valider/<%=element.id%>">Réserver</a>
+                        <main>
+                            <div class="container ">
+                                <div class="d-flex justify-content-center">
+                                    <div class=" m-4 text-center">
+                                        <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
                                     </div>
-                                
-                            <%} else {%>
-                                <p>Se connecter pour réserver</p>
-                            <%}%>
-                            
-                            
-                            
+                                </div>
+                                <!--Tableau des différents ateliers-->
+
+                                <div class="row">
+
+                                    <% atelier.forEach(function(element) {
+                                    if (element.active == true && element.places_reservees <= element.places_dispo) {%>
+                                        <div class="card mx-4 text-center" style="width: 18rem;">
+                                            <img class="card-img-top" src="<%= element.image %>" alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title color-orange">
+                                                    Atelier de
+                                                    <%= element.titre%>
+                                                        <small>Le
+                                                            <%= (new Date(element.date)).getDate() %> /
+                                                                <%= (new Date(element.date)).getMonth()+1 %> /
+                                                                    <%= new Date(element.date).getFullYear() %> à
+                                                                        <%= element.horaire_debut %>
+                                                        </small>
+                                                </h4>
+                                                <p class="card-text">
+                                                    <%= element.contenu%>
+                                                </p>
+
+                                                <p class="card-text">
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                    <%= element.duree%> min
+                                                </p>
+                                                <p class="card-text">
+                                                    Places disponibles :
+                                                    <%= element.places_dispo%>
+                                                    
+                                                </p>
+                                                <p class="card-text">
+                                                    Places réservées :
+                                                    <%= element.places_reservees%>
+                                                    
+                                                </p>
+                                                <p class="card-text">
+                                                    Tarif :
+                                                    <%= element.prix%> €
+                                                </p>
+                                            </div>
+
+                                            <% if (element.places_reservees < element.places_dispo) { %>
+                                                <div class="text-center mb-4">
+                                                    <a class="btn text-light" id="set" href="/reservations/valider/<%=element.id%>">Réserver</a>
+                                                </div>
+
+                                                <% } %>
+
+
+
+                                        </div>
+
+                                        <%};
+                                })%>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+
+
+                        </main>
+
+                        <div class="container">
+                            <% include ../partials/footer %>
                         </div>
 
-                        <%};
-                                })%>
-                </div>
-            </div>
-            </div>
-            </div>
 
 
-        </main>
+                        <!-- Optional JavaScript -->
+                        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                            crossorigin="anonymous"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                            crossorigin="anonymous"></script>
 
-        <div class="container">
-            <% include ../partials/footer %>
-        </div>
+                        <script>
 
 
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-
-            <script>
-            
-            
-            </script>
+                        </script>
 </body>
 
 </html>

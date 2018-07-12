@@ -12,8 +12,8 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var db = mongoose.connection;
 
-var url = "mongodb://localhost/formationCuisine";
-// var url = "mongodb://bdd:bdd974@ds011462.mlab.com:11462/formationcuisine";
+// var url = "mongodb://localhost/formationCuisine";
+var url = "mongodb://bdd:bdd974@ds011462.mlab.com:11462/formationcuisine";
 mongoose.Promise = global.Promise;
 
 mongoose.connect(url)
