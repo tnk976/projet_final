@@ -25,7 +25,7 @@ router.get("/ajoutatelier", requireLogin, atelier.create);
 router.post("/save", requireLogin, atelier.save);
 
 //recuperer la liste des utilisateurs
-router.get("/selectatelier", atelier.selectatelier);
+// router.get("/selectatelier", atelier.selectatelier);
 
 // editer un atelier
 router.get("/edit/:id", requireLogin, atelier.edit);
@@ -34,7 +34,7 @@ router.get("/edit/:id", requireLogin, atelier.edit);
 router.post("/update/:id", requireLogin, atelier.update);
 
 // Modifier un atelier  /!\ cest un POST 
-router.post("/updateplace/:id", requireLogin, atelier.updateplace);
+// router.post("/updateplace/:id", requireLogin, atelier.updateplace);
 
 // supprimer un atelier
 router.get("/remove/:id", requireLogin, atelier.remove);
