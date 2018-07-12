@@ -11,7 +11,14 @@ usersController.indexCuisinier = function (req, res) {
 };
 
 
-// Liste des utilisateurs inscrits
+// Renvoit à la page d'accueil particuliers
+usersController.indexParticulier = function (req, res) {
+    if (req.session.type === "Particulier") {
+        res.render("../views/utilisateurs/index", { session: req.session });
+    };
+}
+
+// Liste des utilisateurs inscrits 
 usersController.list = function (req, res) {
     Utilisateur.find({}).exec(function (err, utilisateur) {
         if (err) {
@@ -99,15 +106,6 @@ usersController.auth = function (req, res) {
 };
 
 
-// Renvoit à la page pour particulier apres la connexion
-usersController.connecte = function (req, res) {
-    if (req.session.type === "Particulier") {
-        res.render("../views/utilisateurs/index",{session: req.session});
-    }
-    else { res.render("../views/cuisinier/index", {session: req.session}); }
-
-    
-};
 
 // déconnection
 usersController.logout = function (req, res) {

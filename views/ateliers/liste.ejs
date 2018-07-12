@@ -7,10 +7,11 @@
 
 <body>
     
-    <%if(session !== undefined){%>
-        <% include ../partials/navConnecte %>
-    <%} else {%>
+    <%if(session.userId == undefined){%>
         <% include ../partials/nav %>
+        
+    <%} else {%>
+        <% include ../partials/navConnecte %>
     <%}%>
     
 
@@ -27,8 +28,8 @@
                 <div class="row">
 
                     <% atelier.forEach(function(element) {
-                                    if (element.active == true) {%>
-                        <div class="card mx-4 my-4 " style="width: 18rem;">
+                                    if (element.active == true && element.places_dispo > 0) {%>
+                        <div class="card mx-4" style="width: 18rem;">
                             <img class="card-img-top" src="<%= element.image %>" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title color-orange">
@@ -58,9 +59,11 @@
                                     <%= element.prix%> €
                                 </p>
                             </div>
-                            <div class="text-center">
-                                <a class "reserv" href="/reservations/valider/<%=element.id%>">Réserver</a>
+                            
+                            <div class="text-center mb-4">
+                                <a class="btn text-light" id="set" href="/reservations/valider/<%=element.id%>">Réserver</a>
                             </div>
+                            
                         </div>
 
                         <%};
@@ -86,6 +89,11 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
+            <script>
+            
+            
+            </script>
 </body>
 
 </html>

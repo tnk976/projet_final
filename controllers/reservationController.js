@@ -4,6 +4,7 @@ var reservationController = {};
 var Reservation = require("../models/reservation");
 var Atelier = require("../models/ateliers");
 var Particulier = require("../models/users");
+var atelierController = require("../controllers/ateliersController");
 
 
 
@@ -58,20 +59,29 @@ reservationController.valider = function (req, res) {
       res.redirect("/reservations/liste");
     }
   });
+
+  atelierController.updateplacedispo(req, res);
+
 };
+
 
 //suppression d'une réservation
-reservationController.remove = function(req, res){
-  Reservation.findByIdAndRemove(req.params.id, function (err, reservations){
-
-      if (err){
+reservationController.remove = function (req, res) {
+  Reservation.findByIdAndRemove(req.params.id, function (err, reservations) {
+    Reservation.find({})
+      .populate("id_particulier")
+      .populate("id_atelier")
+      .exec(function (err, reservations) {
+        if (err) {
           console.log(err);
-          
-      } 
-      res.redirect("/reservations/liste");
-      
-  });
+        }
+        res.redirect("/reservations/liste");
+      });
+    // Modifier les places dispo lorsqu'on annule une réservation
+    atelierController.replaceplacedispo(reservations, res);
+  })
 };
+
 
 
 

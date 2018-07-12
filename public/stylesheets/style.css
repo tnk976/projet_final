@@ -400,10 +400,10 @@ header.masthead p {
 
 .footer-distributed .footer-icons a{
 	display: inline-block;
-	width: 35px;
-	height: 35px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
-	background-color:  #ffffff;
+	background-color:  rgb(255, 255, 255);
 	border-radius: 2px;
 
 	font-size: 20px;
