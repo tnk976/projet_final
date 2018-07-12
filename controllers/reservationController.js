@@ -61,22 +61,27 @@ reservationController.valider = function (req, res) {
   });
 
   atelierController.updateplacedispo(req, res);
-  
+
 };
 
 
 //suppression d'une réservation
 reservationController.remove = function (req, res) {
   Reservation.findByIdAndRemove(req.params.id, function (err, reservations) {
-
-    if (err) {
-      console.log(err);
-
-    }
-    res.redirect("/reservations/liste");
-
-  });
+    Reservation.find({})
+      .populate("id_particulier")
+      .populate("id_atelier")
+      .exec(function (err, reservations) {
+        if (err) {
+          console.log(err);
+        }
+        res.redirect("/reservations/liste");
+      });
+    // Modifier les places dispo lorsqu'on annule une réservation
+    atelierController.replaceplacedispo(reservations, res);
+  })
 };
+
 
 
 
