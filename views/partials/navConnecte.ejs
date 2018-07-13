@@ -8,18 +8,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/utilisateurs/index">Accueil</a>
-        </li>
+         <% if(session.type == "Cuisinier"){%>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/utilisateurs">Accueil</a>
+            </li>  
+         <% }else {%>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/utilisateurs/index">Accueil</a>
+          </li>
+          <%}%>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/ateliers">Ateliers</a>
           </li>
           <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/utilisateurs/logout">Se déconnecter</a>
-          </li>  
+          </li> 
+          <% if(session.type == "Particulier"){%> 
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/reservations/liste">Mon panier</a>
         </li>
+        <%}%>
         </ul>
       </div>
     </div>
