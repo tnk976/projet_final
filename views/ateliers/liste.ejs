@@ -21,6 +21,11 @@
                                         <h4 class="rounded-circle mx-auto my-5">NOS ATELIERS</h4>
                                     </div>
                                 </div>
+
+
+                                <%if(session.type == "Cuisinier"){%>
+                                    <a class="btn btn-primary mx-auto" href="/ateliers/ateliers-admin">Mes ateliers</a>
+                                <%}%>
                                 <!--Tableau des différents ateliers-->
 
                                 <div class="row">
